@@ -58,6 +58,7 @@
         android:text="login"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_16sdp"
+        android:fontFamily="@font/dmsans_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
