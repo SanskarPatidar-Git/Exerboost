@@ -17,5 +17,7 @@ public class SplashActivity extends AppCompatActivity {
 
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
     }
 }
