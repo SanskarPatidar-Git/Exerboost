@@ -1,21 +1,22 @@
-package com.arbutus.exerboost.activity;
+package com.arbutus.exerboost.activity.intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.arbutus.exerboost.R;
+import com.arbutus.exerboost.databinding.ActivityIntroBinding;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
-import com.arbutus.exerboost.databinding.ActivitySplashBinding;
 
-public class SplashActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
 
-    private ActivitySplashBinding binding;
+    private ActivityIntroBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivitySplashBinding.inflate(getLayoutInflater());
+        binding = ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 }
