@@ -14,8 +14,6 @@
             android:id="@+id/skipTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:fontFamily="@font/dmsans_medium"
             android:text="@string/loginactivity_skip"
             android:textColor="@color/colorPrimary"
@@ -27,7 +25,6 @@
             android:id="@+id/login_to_your_account_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/dmsans_bold"
             android:text="@string/loginactivity_login_to_your_account"
@@ -40,9 +37,7 @@
             android:id="@+id/goodtoseeyouTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_10sdp"
             android:fontFamily="@font/dmsans_regular"
             android:text="@string/loginactivity_good_to_see_you_again_enter_your_details_below_to_continue_ordering"
             android:textSize="@dimen/_14ssp"
@@ -56,7 +51,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginRight="@dimen/_15sdp"
             android:hint="Enter Email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/goodtoseeyouTextView"
@@ -80,7 +74,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginRight="@dimen/_15sdp"
             android:hint="Enter Password"
            app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailTextInputLayout"
@@ -97,15 +90,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/sign_in_with_google"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_35sdp"
-            android:layout_gravity="center"
             android:layout_marginTop="@dimen/_100sdp"
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/white"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/createAccountButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -118,11 +109,11 @@
                 android:drawableLeft="@drawable/ic_google"
                 android:drawablePadding="@dimen/_10sdp"
                 android:fontFamily="@font/dmsans_regular"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:text="@string/loginactivity_sign_in_with_google"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_13sdp" />
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
@@ -165,7 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="10dp" />
+            app:layout_constraintGuide_begin="16dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"
@@ -179,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="10dp" />
+            app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
