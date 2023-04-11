@@ -34,7 +34,7 @@
             app:layout_constraintTop_toBottomOf="@id/skipTextView" />
 
         <TextView
-            android:id="@+id/goodtoseeyouTextView"
+            android:id="@+id/enterYourEmailAddressTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
@@ -46,15 +46,15 @@
             app:layout_constraintTop_toBottomOf="@id/login_to_your_account_textview" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailTextInputLayout"
+            android:id="@+id/emailAddressInputLayout"
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
             android:hint="Enter Email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/goodtoseeyouTextView"
-            app:layout_constraintTop_toBottomOf="@+id/goodtoseeyouTextView">
+            app:layout_constraintStart_toStartOf="@+id/enterYourEmailAddressTextView"
+            app:layout_constraintTop_toBottomOf="@+id/enterYourEmailAddressTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
@@ -76,8 +76,8 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:hint="Enter Password"
            app:layout_constraintEnd_toStartOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/emailTextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout">
+            app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/emailAddressInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"

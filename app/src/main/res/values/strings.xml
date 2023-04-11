@@ -14,5 +14,13 @@
     <string name="loginactivity_login">Login to my account</string>
     <string name="loginactivity_sign_in_with_google"><u>Sign in with Google</u></string>
 
+    //forgotpassactivity
+    <string name="forgotpassactivity_cancel">Cancel</string>
+    <string name="forgotpassactivity_forgot_password">Forgot Password</string>
+    <string name="forgotpassactivity_enter_your_email_ddress">Enter your email address to request a password reset</string>
+    <string name="forgotpassactivity_create_an_account">Create an account</string>
+    <string name="forgotpassactivity_login">Login to my account</string>
+    <string name="forgotpassactivity_sign_in_with_google"><u>Sign in with Google</u></string>
+
 
 </resources>
