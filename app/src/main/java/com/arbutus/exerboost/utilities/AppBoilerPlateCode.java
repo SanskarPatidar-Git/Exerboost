@@ -7,7 +7,16 @@ import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class AppBoilerPlateCode {
+
+
+    public static void setInputLayoutErrorDisable(TextInputLayout layout){
+        layout.setError(null);
+        layout.setErrorEnabled(false);
+    }
+
 
     public static void navigateToActivity(Context context , Class nextActivity , Bundle bundle){
         Intent intent = new Intent(context,nextActivity);

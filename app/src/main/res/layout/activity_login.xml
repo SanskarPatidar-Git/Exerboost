@@ -98,6 +98,8 @@
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/white"
             android:orientation="horizontal"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:layout_constraintBottom_toTopOf="@id/createAccountButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
