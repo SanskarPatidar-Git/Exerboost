@@ -117,11 +117,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/_46sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_15sdp"
             android:layout_marginBottom="@dimen/_30sdp"
             android:background="@drawable/gradient_app_color"
             android:letterSpacing="0"
@@ -156,27 +154,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="16dp" />
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="10dp" />
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="10dp" />
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
