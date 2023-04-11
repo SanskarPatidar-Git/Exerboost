@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                AppBoilerPlateCode.navigateToActivity(SplashActivity.this, IntroActivity.class,null);
+                AppBoilerPlateCode.navigateToActivityWithFinish(SplashActivity.this, IntroActivity.class,null);
             }
         },2000);
     }

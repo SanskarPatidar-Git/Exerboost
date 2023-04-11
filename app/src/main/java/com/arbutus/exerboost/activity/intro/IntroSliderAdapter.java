@@ -29,7 +29,7 @@ public class IntroSliderAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return introModelList.size();
     }
 
     @Override

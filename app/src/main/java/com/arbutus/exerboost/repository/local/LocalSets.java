@@ -1,0 +1,23 @@
+package com.arbutus.exerboost.repository.local;
+
+import android.content.SharedPreferences;
+
+import com.arbutus.exerboost.activity.auth.login.model.User;
+
+public class LocalSets {
+
+    public static void setUserData(SharedPreferences preferences , User userData , String authToken){
+
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("id",userData.getId());
+        editor.putString("role",userData.getRole());
+        editor.putString("username",userData.getUsername());
+        editor.putString("email", userData.getEmail());
+        editor.putString("contact",userData.getContact());
+
+        editor.putString("auth_token",authToken);
+        editor.apply();
+    }
+
+}

@@ -14,7 +14,8 @@
         android:textColor="@color/colorSecondary"
         android:textSize="@dimen/_18ssp"
         android:fontFamily="@font/dmsans_bold"
-        android:layout_margin="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -26,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_32sdp"
         app:layout_constraintTop_toBottomOf="@+id/sliderTextView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
