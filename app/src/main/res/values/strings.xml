@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Exerboost</string>
+
+    //introactivity
+    <string name="introactivity_skip">Skip</string>
+    <string name="introactivity_create_an_account">Create an account</string>
+    <string name="introactivity_login">login</string>
+
+    //loginactivity
+    <string name="loginactivity_skip">Skip</string>
+    <string name="loginactivity_login_to_your_account">Login to your account</string>
+    <string name="loginactivity_good_to_see_you_again_enter_your_details_below_to_continue_ordering">Good,to see you again, enter your details below to continue ordering.</string>
+    <string name="loginactivity_create_an_account">Create an account</string>
+    <string name="loginactivity_login">Login to my account</string>
+
+
 </resources>
