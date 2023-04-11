@@ -22,5 +22,12 @@
     <string name="forgotpassactivity_login">Login to my account</string>
     <string name="forgotpassactivity_sign_in_with_google"><u>Sign in with Google</u></string>
 
+    //resetpassactivity
+    <string name="resetpassactivity_cancel">Cancel</string>
+    <string name="resetpassactivity_reset_password">Reset Password</string>
+    <string name="resetpassactivity_a_reset_code_has_been_sent_to_your_mail">A reset code has been sent to your mail</string>
+    <string name="resetpassactivity_login">Login to my account</string>
+    <string name="resetpassactivity_create_an_account">Create an account</string>
+
 
 </resources>

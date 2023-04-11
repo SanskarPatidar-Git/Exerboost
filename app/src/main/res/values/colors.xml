@@ -11,4 +11,12 @@
     <color name="colorSecondary">#1C1C1C</color>
     <color name="error_color">#EA0E0E</color>
     <color name="grey">#AAACAE</color>
+
+    <color name="pin_view_text_hint_default">#FFFFFF</color>
+    <color name="pin_view_text_selected">#000000</color>
+    <color name="pin_view_text_focused">#ABA99B</color>
+    <color name="pin_view_text_default">#ABA99B</color>
+    <color name="pin_view_line_selected">#ABA99B</color>
+    <color name="pin_view_line_focused">#ABA99B</color>
+    <color name="pin_view_line_default">#ABA99B</color>
 </resources>

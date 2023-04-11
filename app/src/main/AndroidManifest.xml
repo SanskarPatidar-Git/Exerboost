@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Exerboost"
         tools:targetApi="31">
         <activity
-            android:name=".activity.auth.register.RegisterActivity"
+            android:name=".activity.auth.resetPassword.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.auth.forgot_password.ForgotPasswordActivity"
