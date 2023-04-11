@@ -10,7 +10,7 @@
 
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
         <item name="hintTextAppearance">@style/HintTextAppearance</item>
 
         <item name="boxStrokeErrorColor">@color/error_color</item>
@@ -18,7 +18,7 @@
         <item name="errorTextColor">@color/error_color</item>
         <item name="errorTextAppearance">@style/HintTextAppearance</item>
 
-        <item name="helperTextTextColor">@color/black</item>
+        <item name="helperTextTextColor">@color/grey</item>
         <item name="helperTextTextAppearance">@style/HintTextAppearance</item>
     </style>
 

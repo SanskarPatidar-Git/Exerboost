@@ -10,4 +10,5 @@
     <color name="colorPrimary">#F0821D</color>
     <color name="colorSecondary">#1C1C1C</color>
     <color name="error_color">#EA0E0E</color>
+    <color name="grey">#AAACAE</color>
 </resources>
