@@ -1,13 +1,17 @@
 package com.arbutus.exerboost.activity.auth.register;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
 
+import com.arbutus.exerboost.activity.auth.register.models.request.RegisterModel;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.databinding.ActivityRegisterBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
@@ -37,7 +41,15 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                int isValid = Validation.isValidEmail(charSequence.toString());
 
+                if (isValid==1) {
+                    binding.emailAddressInputLayout.setError("Enter email");
+                } else if(isValid==2) {
+                    binding.emailAddressInputLayout.setError("Invalid email format");
+                } else if(isValid==0){
+                    AppBoilerPlateCode.setInputLayoutErrorDisable(binding.emailAddressInputLayout);
+                }
             }
 
             @Override
@@ -139,24 +151,44 @@ public class RegisterActivity extends AppCompatActivity {
                     binding.confirmPasswordInputLayout.setError("Enter confirm password");
                     binding.confirmPasswordEditText.requestFocus();
                 } else {
-                    createUser();
+                    RegisterModel registerModel = new RegisterModel(email,password,confirmPassword);
+                    createUser(registerModel);
                 }
             }
         });
     }
 
-    private void createUser() {
+    private void createUser(RegisterModel model) {
 
         if (AppBoilerPlateCode.isInternetConnected(this)) {
             progressDialog = AppBoilerPlateCode.setProgressDialog(RegisterActivity.this);
-            registerUser();
+            registerUser(model);
         } else {
             AppBoilerPlateCode.showSnackBarForInternet(this,binding.rootLayoutOfRegister);
         }
     }
 
-    private void registerUser() {
+    private void registerUser(RegisterModel model) {
 
+        RegisterRepository repository = new RegisterRepository();
+        LiveData<String> successLiveData = repository.getSuccessResponseMutableData();
+        LiveData<String> failureLiveData = repository.getFailureResponseMutableData();
 
+        successLiveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                progressDialog.dismiss();
+                Toast.makeText(RegisterActivity.this, s, Toast.LENGTH_SHORT).show();
+                onBackPressed();
+            }
+        });
+
+        failureLiveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                progressDialog.dismiss();
+                Toast.makeText(RegisterActivity.this, "Failed : "+s, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

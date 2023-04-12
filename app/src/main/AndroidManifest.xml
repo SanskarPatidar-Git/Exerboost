@@ -9,17 +9,18 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_splash"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:roundIcon="@drawable/logo_splash"
         android:theme="@style/Theme.Exerboost"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AddNewAddressActivity"
+            android:name=".activity.add_new_address.AddNewAddressActivity"
             android:exported="false" />
         <activity
-            android:name=".SelectAddressActivity"
+            android:name=".activity.select_address.SelectAddressActivity"
             android:exported="false" />
         <activity
             android:name=".activity.auth.register.RegisterActivity"
