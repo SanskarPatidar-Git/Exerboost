@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.auth.login.LoginActivity;
+import com.arbutus.exerboost.activity.auth.register.RegisterActivity;
 import com.arbutus.exerboost.databinding.ActivityIntroBinding;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
@@ -44,6 +45,19 @@ public class IntroActivity extends AppCompatActivity {
 
     private void initListener(){
 
+        binding.skipTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this, RegisterActivity.class,null);
+            }
+        });
+
+        binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this,RegisterActivity.class,null);
+            }
+        });
         binding.loginTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

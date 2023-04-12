@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import com.arbutus.exerboost.activity.auth.login.LoginActivity;
 import com.arbutus.exerboost.activity.auth.register.models.request.RegisterModel;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.databinding.ActivityRegisterBinding;
@@ -33,6 +34,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void initListeners() {
 
+        binding.skipTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivity(RegisterActivity.this, LoginActivity.class,null);
+            }
+        });
+
+        binding.loginTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivity(RegisterActivity.this, LoginActivity.class,null);
+            }
+        });
         binding.emailEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -150,8 +164,11 @@ public class RegisterActivity extends AppCompatActivity {
                 }else if (Validation.isStringEmpty(confirmPassword)) {
                     binding.confirmPasswordInputLayout.setError("Enter confirm password");
                     binding.confirmPasswordEditText.requestFocus();
-                } else {
-                    RegisterModel registerModel = new RegisterModel(email,password,confirmPassword);
+                }else if(!binding.termsAndConditionCheckBox.isChecked()){
+                    Toast.makeText(RegisterActivity.this, "please accept terms and policy", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    RegisterModel registerModel = new RegisterModel(email,password,confirmPassword,true);
                     createUser(registerModel);
                 }
             }
@@ -173,13 +190,14 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterRepository repository = new RegisterRepository();
         LiveData<String> successLiveData = repository.getSuccessResponseMutableData();
         LiveData<String> failureLiveData = repository.getFailureResponseMutableData();
+        repository.registerUserToServer(model);
 
         successLiveData.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 progressDialog.dismiss();
                 Toast.makeText(RegisterActivity.this, s, Toast.LENGTH_SHORT).show();
-                onBackPressed();
+                AppBoilerPlateCode.navigateToActivityWithFinish(RegisterActivity.this,LoginActivity.class,null);
             }
         });
 

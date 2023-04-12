@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/dmsans_medium"
             android:text="@string/loginactivity_skip"
+            android:visibility="gone"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
@@ -101,7 +102,7 @@
             android:layout_marginBottom="@dimen/_12sdp"
             android:background="@drawable/gradient_app_color"
             android:letterSpacing="0"
-            android:text="@string/loginactivity_create_an_account"
+            android:text="Login"
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
             app:backgroundTint="@null"
@@ -122,7 +123,7 @@
             app:cardElevation="@dimen/_2sdp"
             app:layout_constraintEnd_toEndOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintBottom_toTopOf="@+id/loginTextView">
+            app:layout_constraintBottom_toTopOf="@+id/registerTextView">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -139,15 +140,15 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/loginTextView"
+            android:id="@+id/registerTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/dmsans_medium"
-            android:text="@string/loginactivity_login"
+            android:text="Not Registered? Register"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16sdp"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left" />

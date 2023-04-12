@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.activity.auth.login.model.response.LoginResponse;
+import com.arbutus.exerboost.activity.auth.social.SocialSignInModel;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.repository.remote.ApiController;
@@ -62,6 +63,44 @@ public class LoginRepository {
                     failureResponseMutableData.setValue(responseModel.getMessage());
                 }
 
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                System.out.println("================ ERROR =================== " + t.getMessage());
+                failureResponseMutableData.setValue("Error");
+            }
+        });
+    }
+
+    public void loginUserWithGoogle(SocialSignInModel model){
+
+        Call<LoginResponse> call = ApiController.getInstance().getApiSets().loginUserWithSocial(model);
+
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                LoginResponse model = response.body();
+                if (model != null) {
+
+                    if (response.isSuccessful() && model.isStatus()) {
+                        successResponseMutableData.setValue(model.getData());
+                    } else {
+                        failureResponseMutableData.setValue(model.getMessage());
+                    }
+                }
+                else {
+                    Gson gson = new GsonBuilder().create();
+                    LoginResponse responseModel = null;
+                    try {
+                        responseModel = gson.fromJson(response.errorBody().string(), LoginResponse.class);
+                    } catch (IOException e) {
+                        System.out.println("============= IO EXCEPTION ========== "+e.getMessage());
+                    }
+                    System.out.println("================ NULL MODEL =================== "+responseModel.getMessage());
+                    failureResponseMutableData.setValue(responseModel.getMessage());
+                }
             }
 
             @Override

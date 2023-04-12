@@ -1,10 +1,13 @@
 package com.arbutus.exerboost.activity.auth.login;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,14 +17,20 @@ import android.widget.Toast;
 import com.arbutus.exerboost.activity.MainActivity;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
+import com.arbutus.exerboost.activity.auth.register.RegisterActivity;
+import com.arbutus.exerboost.activity.auth.social.GoogleSignIn;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
+import com.arbutus.exerboost.utilities.AppConstants;
 import com.arbutus.exerboost.utilities.Validation;
 
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-    private Dialog progressDialog;
+    public Dialog progressDialog;
+    private GoogleSignIn googleSignIn;
+
+    private LoginRepository repository  = new LoginRepository();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +39,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         initListener();
+        observeResponse();
     }
 
     private void initListener() {
+
+        binding.registerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               AppBoilerPlateCode.navigateToActivity(LoginActivity.this, RegisterActivity.class,null);
+            }
+        });
 
         binding.emailEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -42,9 +59,13 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (Validation.isStringEmpty(charSequence.toString())) {
-                    binding.emailAddressInputLayout.setError("Enter email or username");
-                } else {
+                int isValid = Validation.isValidEmail(charSequence.toString());
+
+                if (isValid==1) {
+                    binding.emailAddressInputLayout.setError("Enter email");
+                } else if(isValid==2) {
+                    binding.emailAddressInputLayout.setError("Invalid email format");
+                } else if(isValid==0){
                     AppBoilerPlateCode.setInputLayoutErrorDisable(binding.emailAddressInputLayout);
                 }
             }
@@ -81,6 +102,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                System.out.println("============");
+                googleSignIn = new GoogleSignIn(LoginActivity.this,repository);
+                googleSignIn.signIn();
             }
         });
 
@@ -91,8 +115,11 @@ public class LoginActivity extends AppCompatActivity {
                 String email = binding.emailEditText.getText().toString().trim();
                 String password = binding.passwordEditText.getText().toString().trim();
 
-                 if (Validation.isStringEmpty(email)) {
-                    binding.emailAddressInputLayout.setError("Enter email or username");
+                if (binding.emailAddressInputLayout.isErrorEnabled()) {
+                    binding.emailEditText.requestFocus();
+
+                }else if (Validation.isStringEmpty(email)) {
+                    binding.emailAddressInputLayout.setError("Enter email");
                     binding.emailEditText.requestFocus();
 
                 } else if (Validation.isStringEmpty(password)) {
@@ -117,12 +144,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(LoginModel loginModel){
         //todo login user
+        repository.loginUserToServer(loginModel);
+    }
 
-        LoginRepository repository = new LoginRepository();
+    private void observeResponse(){
+
         LiveData<String> failureResponseLiveData = repository.getFailureResponseMutableData();
         LiveData<Data> successResponseLiveData = repository.getSuccessResponseMutableData();
-
-        repository.loginUserToServer(loginModel);
 
         failureResponseLiveData.observe(this, new Observer<String>() {
             @Override
@@ -144,5 +172,12 @@ public class LoginActivity extends AppCompatActivity {
                 AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class,null);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("========== activity result ============"+resultCode+"      "+requestCode);
+        googleSignIn.activityResult(requestCode,resultCode,data, Activity.RESULT_OK);
     }
 }

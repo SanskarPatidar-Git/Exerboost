@@ -10,13 +10,17 @@ public class RegisterModel {
     @SerializedName("password")
     private String password;
 
-    @SerializedName("confirm_password")
+    @SerializedName("confirm password")
     private String confirmPassword;
 
-    public RegisterModel(String email, String password, String confirmPassword) {
+    @SerializedName("policyAccept")
+    private boolean policyAccepted;
+
+    public RegisterModel(String email, String password, String confirmPassword , boolean policyAccepted) {
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
+        this.policyAccepted = policyAccepted;
     }
 
     public String getEmail() {
@@ -41,5 +45,13 @@ public class RegisterModel {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public boolean isPolicyAccepted() {
+        return policyAccepted;
+    }
+
+    public void setPolicyAccepted(boolean policyAccepted) {
+        this.policyAccepted = policyAccepted;
     }
 }

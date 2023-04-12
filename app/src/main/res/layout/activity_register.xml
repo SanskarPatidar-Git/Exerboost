@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/rootLayoutOfRegister"
     tools:context=".activity.auth.register.RegisterActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -113,20 +114,32 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/termsAndConditionCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms &amp; Policy"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/dmsans_medium"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordInputLayout" />
+
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/sign_in_with_google"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/white"
             android:orientation="horizontal"
-            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_6sdp"
             app:cardElevation="@dimen/_2sdp"
             app:layout_constraintBottom_toTopOf="@id/createAccountButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordInputLayout">
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionCheckBox">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,6 +153,9 @@
                 android:textSize="@dimen/_13sdp" />
         </com.google.android.material.card.MaterialCardView>
 
+
+
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
             android:layout_width="0dp"
@@ -150,7 +166,7 @@
             android:letterSpacing="0"
             android:text="@string/registeractivity_create_an_account"
             android:textAllCaps="false"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_14ssp"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toTopOf="@+id/loginTextView"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
