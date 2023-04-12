@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.auth.login.model;
+package com.arbutus.exerboost.activity.auth.login.model.response;
 
 import com.google.gson.annotations.SerializedName;
 

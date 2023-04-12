@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
 
-import com.arbutus.exerboost.R;
-import com.arbutus.exerboost.activity.auth.login.model.Data;
-import com.arbutus.exerboost.activity.auth.login.model.LoginModel;
+import com.arbutus.exerboost.activity.MainActivity;
+import com.arbutus.exerboost.activity.auth.login.model.response.Data;
+import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.arbutus.exerboost.utilities.Validation;
@@ -19,6 +21,7 @@ import com.arbutus.exerboost.utilities.Validation;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
+    private Dialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +77,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        binding.signInWithGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = binding.passwordEditText.getText().toString().trim();
 
                  if (Validation.isStringEmpty(email)) {
-                    binding.emailAddressInputLayout.setError("Enter email");
+                    binding.emailAddressInputLayout.setError("Enter email or username");
                     binding.emailEditText.requestFocus();
 
                 } else if (Validation.isStringEmpty(password)) {
@@ -90,8 +100,16 @@ public class LoginActivity extends AppCompatActivity {
                     binding.passwordInputLayout.setError("Enter password");
 
                 } else {
-                    LoginModel loginModel = new LoginModel(email,password);
-                    loginUser(loginModel);
+
+                     if(AppBoilerPlateCode.isInternetConnected(LoginActivity.this)){
+
+                         progressDialog = AppBoilerPlateCode.setProgressDialog(LoginActivity.this);
+                         LoginModel loginModel = new LoginModel(email,password);
+                         loginUser(loginModel);
+                     }
+                     else {
+                         AppBoilerPlateCode.showSnackBarForInternet(LoginActivity.this,binding.rootLayoutOfLogin);
+                     }
                 }
             }
         });
@@ -109,6 +127,8 @@ public class LoginActivity extends AppCompatActivity {
         failureResponseLiveData.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
+                progressDialog.dismiss();
+                Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
                 System.out.println("FAILURE ++++++++++++++++++ "+s);
             }
         });
@@ -117,10 +137,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onChanged(Data data) {
                 // todo store data and token in local storage
+                progressDialog.dismiss();
                 System.out.println("SUCCESS ++++++++++++++++++ ");
                 repository.setUserDataToLocal(LoginActivity.this);
 
-
+                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class,null);
             }
         });
     }

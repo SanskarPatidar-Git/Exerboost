@@ -2,7 +2,7 @@ package com.arbutus.exerboost.repository.local;
 
 import android.content.SharedPreferences;
 
-import com.arbutus.exerboost.activity.auth.login.model.User;
+import com.arbutus.exerboost.activity.auth.login.model.response.User;
 
 public class LocalSets {
 
@@ -18,6 +18,10 @@ public class LocalSets {
 
         editor.putString("auth_token",authToken);
         editor.apply();
+    }
+
+    public static String getAuthToken(SharedPreferences preferences){
+        return preferences.getString("auth_token",null);
     }
 
 }

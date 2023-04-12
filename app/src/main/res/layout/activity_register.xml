@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootLayoutOfRegister"
     tools:context=".activity.auth.register.RegisterActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -37,7 +38,7 @@
             android:id="@+id/welcomeFriendTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:fontFamily="@font/dmsans_regular"
             android:text="@string/registeractivity_Welcome_friend"
             android:textSize="@dimen/_14ssp"
@@ -89,6 +90,7 @@
                 android:textColor="@color/colorSecondary" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/confirmPasswordInputLayout"
             style="@style/TextInputLayout"
@@ -101,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirmpasswordEditText"
+                android:id="@+id/confirmPasswordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"

@@ -5,14 +5,16 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.arbutus.exerboost.activity.auth.login.model.Data;
-import com.arbutus.exerboost.activity.auth.login.model.LoginModel;
-import com.arbutus.exerboost.activity.auth.login.model.LoginResponse;
+import com.arbutus.exerboost.activity.auth.login.model.response.Data;
+import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
+import com.arbutus.exerboost.activity.auth.login.model.response.LoginResponse;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.repository.remote.ApiController;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-import java.util.Locale;
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,16 +42,24 @@ public class LoginRepository {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
                 LoginResponse model = response.body();
-
                 if (model != null) {
+
                     if (response.isSuccessful() && model.isStatus()) {
                         successResponseMutableData.setValue(model.getData());
                     } else {
                         failureResponseMutableData.setValue(model.getMessage());
                     }
-                } else {
-                    System.out.println("================ NULL MODEL =================== ");
-                    failureResponseMutableData.setValue(null);
+                }
+                else {
+                    Gson gson = new GsonBuilder().create();
+                    LoginResponse responseModel = null;
+                    try {
+                        responseModel = gson.fromJson(response.errorBody().string(), LoginResponse.class);
+                    } catch (IOException e) {
+                        System.out.println("============= IO EXCEPTION ========== "+e.getMessage());
+                    }
+                    System.out.println("================ NULL MODEL =================== "+responseModel.getMessage());
+                    failureResponseMutableData.setValue(responseModel.getMessage());
                 }
 
             }

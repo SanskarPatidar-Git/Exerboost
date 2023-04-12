@@ -9,7 +9,10 @@ import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.intro.IntroActivity;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.databinding.ActivitySplashBinding;
+import com.arbutus.exerboost.repository.local.LocalController;
+import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
+import com.arbutus.exerboost.utilities.Validation;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,7 +27,13 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                AppBoilerPlateCode.navigateToActivityWithFinish(SplashActivity.this, IntroActivity.class,null);
+                String authToken = LocalSets.getAuthToken(LocalController.getInstance(SplashActivity.this).getPreferences());
+
+                if(Validation.isStringEmpty(authToken)){
+                    AppBoilerPlateCode.navigateToActivityWithFinish(SplashActivity.this, IntroActivity.class,null);
+                } else
+                    AppBoilerPlateCode.navigateToActivityWithFinish(SplashActivity.this, MainActivity.class,null);
+
             }
         },2000);
     }

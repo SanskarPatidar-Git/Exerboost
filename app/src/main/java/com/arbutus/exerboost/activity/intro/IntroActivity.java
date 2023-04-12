@@ -47,7 +47,7 @@ public class IntroActivity extends AppCompatActivity {
         binding.loginTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppBoilerPlateCode.navigateToActivity(IntroActivity.this, LoginActivity.class,null);
+                AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this, LoginActivity.class,null);
             }
         });
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootLayoutOfLogin"
     tools:context=".activity.auth.login.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +41,7 @@
             android:layout_marginTop="@dimen/_12sdp"
             android:fontFamily="@font/dmsans_regular"
             android:text="@string/loginactivity_good_to_see_you_again_enter_your_details_below_to_continue_ordering"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/login_to_your_account_textview" />
@@ -50,7 +51,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:hint="Enter Email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/enterYourEmailAddressTextView"
@@ -90,61 +91,61 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/sign_in_with_google"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_100sdp"
-            android:background="@drawable/button_bg"
-            android:backgroundTint="@color/white"
-            android:orientation="horizontal"
-            app:cardCornerRadius="@dimen/_4sdp"
-            app:cardElevation="@dimen/_2sdp"
-            app:layout_constraintBottom_toTopOf="@id/createAccountButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordInputLayout">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_google"
-                android:drawablePadding="@dimen/_10sdp"
-                android:fontFamily="@font/dmsans_regular"
-                android:layout_gravity="center"
-                android:text="@string/loginactivity_sign_in_with_google"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_13sdp" />
-        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/_46sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
             android:background="@drawable/gradient_app_color"
             android:letterSpacing="0"
             android:text="@string/loginactivity_create_an_account"
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
             app:backgroundTint="@null"
-            app:layout_constraintBottom_toTopOf="@+id/loginTextView"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+            app:layout_constraintBottom_toTopOf="@id/sign_in_with_google"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/sign_in_with_google"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toStartOf="@id/guideline_left"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/sign_in_with_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/white"
+            android:orientation="horizontal"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintBottom_toTopOf="@+id/loginTextView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_google"
+                android:drawablePadding="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:fontFamily="@font/dmsans_regular"
+                android:layout_gravity="center"
+                android:text="@string/loginactivity_sign_in_with_google"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/_13sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/loginTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_25sdp"
             android:fontFamily="@font/dmsans_medium"
             android:text="@string/loginactivity_login"
-            android:textAlignment="viewEnd"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
@@ -163,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/_16sdp" />
+            app:layout_constraintGuide_end="@dimen/_60sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_left"
@@ -178,5 +179,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/_16sdp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
