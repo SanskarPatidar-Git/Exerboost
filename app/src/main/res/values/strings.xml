@@ -27,7 +27,17 @@
     <string name="resetpassactivity_reset_password">Reset Password</string>
     <string name="resetpassactivity_a_reset_code_has_been_sent_to_your_mail">A reset code has been sent to your mail</string>
     <string name="resetpassactivity_login">Login to my account</string>
-    <string name="resetpassactivity_create_an_account">Create an account</string>
+    <string name="resetpassactivity_resetPasswordButton">Reset Password</string>
+
+    //registeractivity
+    <string name="registeractivity_Welcome_friend">Welcome friend, enter your details so lets get started in ordering food</string>
+    <string name="registeractivity_skip">Skip</string>
+    <string name="registeractivity_enter_email">Enter Email</string>
+    <string name="registeractivity_enter_password">Enter Password</string>
+    <string name="registeractivity_sign_in_with_google">Sign in with Google</string>
+    <string name="registeractivity_login">Login to my account</string>
+    <string name="registeractivity_create_an_account">Create an account</string>
+    <string name="resetpassactivity_enterCode">Enter Code</string>
 
 
 </resources>

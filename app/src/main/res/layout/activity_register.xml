@@ -15,35 +15,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/dmsans_medium"
-            android:text="@string/loginactivity_skip"
+            android:text="@string/registeractivity_skip"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintTop_toTopOf="@id/guideline_top" />
 
         <TextView
-            android:id="@+id/login_to_your_account_textview"
+            android:id="@+id/create_an_account_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/dmsans_bold"
-            android:text="Create an account"
+            android:text="@string/registeractivity_create_an_account"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/_24ssp"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/skipTextView" />
 
         <TextView
-            android:id="@+id/enterYourEmailAddressTextView"
+            android:id="@+id/welcomeFriendTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
             android:fontFamily="@font/dmsans_regular"
-            android:text="@string/loginactivity_good_to_see_you_again_enter_your_details_below_to_continue_ordering"
+            android:text="@string/registeractivity_Welcome_friend"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/login_to_your_account_textview" />
+            app:layout_constraintTop_toBottomOf="@id/create_an_account_textview" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailAddressInputLayout"
@@ -51,10 +51,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:hint="Enter Email"
+            android:hint="@string/registeractivity_enter_email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/enterYourEmailAddressTextView"
-            app:layout_constraintTop_toBottomOf="@+id/enterYourEmailAddressTextView">
+            app:layout_constraintStart_toStartOf="@+id/welcomeFriendTextView"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeFriendTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
@@ -74,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:hint="Enter Password"
+            android:hint="@string/registeractivity_enter_password"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/emailAddressInputLayout">
@@ -95,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:hint="Confirm your Password"
+            android:hint="Confirm Password"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout">
@@ -133,7 +133,7 @@
                 android:drawablePadding="@dimen/_10sdp"
                 android:fontFamily="@font/dmsans_regular"
                 android:layout_gravity="center"
-                android:text="@string/loginactivity_sign_in_with_google"
+                android:text="@string/registeractivity_sign_in_with_google"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_13sdp" />
         </com.google.android.material.card.MaterialCardView>
@@ -146,7 +146,7 @@
             android:layout_marginBottom="@dimen/_30sdp"
             android:background="@drawable/gradient_app_color"
             android:letterSpacing="0"
-            android:text="@string/loginactivity_create_an_account"
+            android:text="@string/registeractivity_create_an_account"
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
             app:backgroundTint="@null"
@@ -164,7 +164,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_25sdp"
             android:fontFamily="@font/dmsans_medium"
-            android:text="@string/loginactivity_login"
+            android:text="@string/registeractivity_login"
             android:textAlignment="viewEnd"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_16sdp"
