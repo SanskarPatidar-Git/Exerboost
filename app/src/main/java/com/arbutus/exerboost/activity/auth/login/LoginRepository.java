@@ -56,11 +56,12 @@ public class LoginRepository {
                     LoginResponse responseModel = null;
                     try {
                         responseModel = gson.fromJson(response.errorBody().string(), LoginResponse.class);
-                    } catch (IOException e) {
-                        System.out.println("============= IO EXCEPTION ========== "+e.getMessage());
+                        System.out.println("================ NULL MODEL =================== " + responseModel.getMessage());
+                        failureResponseMutableData.setValue(responseModel.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("============= IO EXCEPTION ========== " + e.getMessage());
+                        failureResponseMutableData.setValue("Failed");
                     }
-                    System.out.println("================ NULL MODEL =================== "+responseModel.getMessage());
-                    failureResponseMutableData.setValue(responseModel.getMessage());
                 }
 
             }
@@ -95,11 +96,13 @@ public class LoginRepository {
                     LoginResponse responseModel = null;
                     try {
                         responseModel = gson.fromJson(response.errorBody().string(), LoginResponse.class);
+                        failureResponseMutableData.setValue(responseModel.getMessage());
                     } catch (IOException e) {
                         System.out.println("============= IO EXCEPTION ========== "+e.getMessage());
+                        failureResponseMutableData.setValue("Failed to login");
                     }
                     System.out.println("================ NULL MODEL =================== "+responseModel.getMessage());
-                    failureResponseMutableData.setValue(responseModel.getMessage());
+
                 }
             }
 
@@ -115,7 +118,8 @@ public class LoginRepository {
 
         try {
             System.out.println("========== TOKEN ============= " + successResponseMutableData.getValue().getToken());
-            LocalSets.setUserData(LocalController.getInstance(context).getPreferences(), successResponseMutableData.getValue().getUser(), successResponseMutableData.getValue().getToken());
+            //LocalSets.setUserData(LocalController.getInstance(context).getPreferences(), successResponseMutableData.getValue().getUser(), successResponseMutableData.getValue().getToken());
+            LocalSets.setToken(LocalController.getInstance(context).getPreferences(),successResponseMutableData.getValue().getToken());
         } catch (NullPointerException exception) {
             exception.printStackTrace();
         }

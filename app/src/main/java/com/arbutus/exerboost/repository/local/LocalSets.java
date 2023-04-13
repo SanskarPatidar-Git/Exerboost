@@ -20,6 +20,12 @@ public class LocalSets {
         editor.apply();
     }
 
+    public static void setToken(SharedPreferences preferences , String authToken){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("auth_token",authToken);
+        editor.apply();
+    }
+
     public static String getAuthToken(SharedPreferences preferences){
         return preferences.getString("auth_token",null);
     }
