@@ -1,13 +1,23 @@
 package com.arbutus.exerboost.activity.add_new_address;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.app.Dialog;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.payment.card.AddCardModel;
 import com.arbutus.exerboost.activity.payment.card.AddCardRepository;
 import com.arbutus.exerboost.activity.payment.card.AddNewCardActivity;
@@ -16,9 +26,14 @@ import com.arbutus.exerboost.databinding.ActivityAddNewCardBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.arbutus.exerboost.utilities.Validation;
 
+import java.util.ArrayList;
+
 public class AddNewAddressActivity extends AppCompatActivity {
-private ActivityAddNewAddressBinding binding;
+    private ActivityAddNewAddressBinding binding;
     private Dialog progressDialog;
+
+    private String addressType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +43,7 @@ private ActivityAddNewAddressBinding binding;
         binding.header.headerTitleTextView.setText("Add New Address");
 
         initListeners();
+        setSpinnerAdapter();
     }
 
     private void initListeners() {
@@ -159,6 +175,28 @@ private ActivityAddNewAddressBinding binding;
 
             }
         });
+
+        binding.addressTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                try{
+                    TextView textView = (TextView) adapterView.getSelectedView();
+                    textView.setTextColor(getColor(R.color.colorSecondary));
+                    textView.setTypeface(getTypeFace());
+                    if(i!=0){
+                        addressType = adapterView.getSelectedItem().toString();
+                    }
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,34 +208,56 @@ private ActivityAddNewAddressBinding binding;
                 String country = binding.countryEditText.getText().toString().trim();
                 String postCode = binding.postCodeEditText.getText().toString().trim();
 
+                //============================= VALIDATE FIELDS ================================
+
                 if(Validation.isStringEmpty(streetOne)){
                     binding.streetOneInputLayout.setError("Enter Street 1");
+                    binding.streetOneEditText.requestFocus();
+
                 } else if(binding.streetOneInputLayout.isErrorEnabled()){
                     binding.streetOneEditText.requestFocus();
+
                 } else if(Validation.isStringEmpty(streetTwo)){
                     binding.streetTwoInputLayout.setError("Enter Street 2");
+                    binding.streetTwoEditText.requestFocus();
+
                 }  else if(binding.streetTwoInputLayout.isErrorEnabled()){
                     binding.streetTwoEditText.requestFocus();
+
                 } else if(Validation.isStringEmpty(city)){
                     binding.cityInputLayout.setError("Enter City");
+                    binding.cityEditText.requestFocus();
+
                 }  else if(binding.cityInputLayout.isErrorEnabled()){
                     binding.cityEditText.requestFocus();
+
                 } else if(Validation.isStringEmpty(state)){
                     binding.stateInputLayout.setError("Enter State");
+                    binding.stateEditText.requestFocus();
+
                 }  else if(binding.stateInputLayout.isErrorEnabled()){
                     binding.stateEditText.requestFocus();
+
                 } else if(Validation.isStringEmpty(country)) {
                     binding.countryInputLayout.setError("Enter Country");
+                    binding.countryEditText.requestFocus();
+
                 }  else if(binding.countryInputLayout.isErrorEnabled()){
                         binding.countryEditText.requestFocus();
+
                 } else if(Validation.isStringEmpty(postCode)) {
                     binding.postCodeInputLayout.setError("Enter Post Code");
+                    binding.postCodeEditText.requestFocus();
+
                 }  else if(binding.postCodeInputLayout.isErrorEnabled()) {
                     binding.postCodeEditText.requestFocus();
-                }
-                else {
 
-                    AddNewAddressModel model = new AddNewAddressModel(streetOne,streetTwo,city,state,country,postCode);
+                } else if(Validation.isStringEmpty(addressType)){
+                    Toast.makeText(AddNewAddressActivity.this, "Please select address type", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    AddNewAddressModel model = new AddNewAddressModel(streetOne,streetTwo,city,state,country,postCode,addressType);
                     addNewAddress(model);
                 }
             }
@@ -220,4 +280,38 @@ private ActivityAddNewAddressBinding binding;
         AddNewAddressRepository repository = new AddNewAddressRepository();
         repository.addNewAddress(model);
     }
+
+    private void  setSpinnerAdapter(){
+
+        ArrayList<String> addressTypeList = new ArrayList<>();
+        addressTypeList.add("Select Address Type");
+        addressTypeList.add("Home");
+        addressTypeList.add("Work");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,addressTypeList){
+
+            @Override
+            public boolean isEnabled(int position) {
+                return position!=0;
+            }
+
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView textView = (TextView) view;
+                if(position==0){
+                    textView.setTextColor(getColor(R.color.black_text_disabled));
+                }
+                textView.setTypeface(getTypeFace());
+                return view;
+            }
+
+        };
+        binding.addressTypeSpinner.setAdapter(adapter);
     }
+
+    private Typeface getTypeFace(){
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.dmsans_medium);
+        return typeface;
+    }
+}

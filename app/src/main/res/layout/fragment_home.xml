@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/deliveryToTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:drawableRight="@drawable/drawable_arrow_down"
+            android:drawablePadding="@dimen/_4sdp"
+            android:textColor="@color/black"
+            android:text="@string/delivery_toText"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Marimata square"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13ssp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/deliveryToTextView" />
+
+        <ImageView
+            android:id="@+id/notificationImageView"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintTop_toTopOf="@+id/guideline_top"
+            android:src="@drawable/notification" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/locationLayout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardBackgroundColor="@color/greycolor"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/locationTextView">
+
+            <TextView
+                android:id="@+id/searchTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+
+                android:drawableRight="@drawable/ic_search"
+                android:drawablePadding="@dimen/_4sdp"
+                android:fontFamily="@font/dmsans_bold"
+                android:gravity="center_vertical"
+                android:hint="Search"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12sdp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.library.sliderview.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/locationLayout"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="@dimen/_10sdp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="@dimen/_3sdp"
+            app:sliderIndicatorRadius="@dimen/_2sdp"
+            app:sliderIndicatorSelectedColor="@color/black"
+            app:sliderIndicatorUnselectedColor="#FAA5A4A4"
+            app:sliderScrollTimeInSec="3"
+            app:sliderStartAutoCycle="true" />
+
+        <TextView
+            android:id="@+id/dietPreferenceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:fontFamily="@font/dmsans_medium"
+            android:gravity="start"
+            android:text="Select Diet Preference:"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/vegLayout"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/imageSlider" />
+
+        <LinearLayout
+            android:id="@+id/vegLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/drawable_green_border"
+            app:layout_constraintBottom_toBottomOf="@id/dietPreferenceTextView"
+            app:layout_constraintStart_toEndOf="@+id/dietPreferenceTextView"
+            app:layout_constraintEnd_toStartOf="@+id/nonvegLayout"
+            app:layout_constraintTop_toTopOf="@id/dietPreferenceTextView">
+
+            <TextView
+                android:id="@+id/vegTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:drawableLeft="@drawable/veg_green_circle"
+                android:drawablePadding="@dimen/_6sdp"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="Veg"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nonvegLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/drawable_red_border"
+            app:layout_constraintBottom_toBottomOf="@id/vegLayout"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@+id/vegLayout"
+            app:layout_constraintTop_toTopOf="@id/vegLayout">
+
+            <TextView
+                android:id="@+id/nonvegTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:drawableLeft="@drawable/nonveg_red_circle"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="Non-Veg"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/selectYourPreferenceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/dmsans_medium"
+            android:gravity="start"
+            android:text="Select Your Preference:"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/dietPreferenceTextView" />
+
+        <ImageView
+            android:id="@+id/cardviewImage"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="start"
+            android:elevation="@dimen/_10sdp"
+            android:src="@drawable/card_view_image"
+            app:layout_constraintStart_toStartOf="@id/choicevegCardView"
+            app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
+            app:layout_constraintTop_toTopOf="@+id/choicevegCardView"/>
+
+
+        <TextView
+            android:id="@+id/selectMealTimeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:gravity="center"
+            android:text="Select Meal Time*"
+            android:textColor="@color/colorSecondary"
+            android:elevation="@dimen/_6sdp"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@id/lunchLayout"
+            app:layout_constraintEnd_toEndOf="@+id/dinnerLayout"
+            app:layout_constraintBottom_toTopOf="@+id/lunchLayout"
+            app:layout_constraintTop_toTopOf="@+id/choicevegCardView"/>
+
+        <LinearLayout
+            android:id="@+id/lunchLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:background="@drawable/drawable_green_border"
+            app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
+            app:layout_constraintStart_toEndOf="@+id/cardviewImage"
+            app:layout_constraintEnd_toStartOf="@+id/dinnerLayout"
+            app:layout_constraintTop_toBottomOf="@id/selectMealTimeTextView">
+
+            <TextView
+                android:id="@+id/lunchTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dmsans_medium"
+                android:padding="@dimen/_8sdp"
+                android:text="Lunch"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/_13ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dinnerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:background="@drawable/drawable_red_border"
+            app:layout_constraintBottom_toBottomOf="@id/lunchLayout"
+            app:layout_constraintStart_toEndOf="@+id/lunchLayout"
+            app:layout_constraintEnd_toEndOf="@+id/choicevegCardView"
+            app:layout_constraintTop_toTopOf="@id/lunchLayout">
+
+            <TextView
+                android:id="@+id/dinnerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dmsans_medium"
+                android:padding="@dimen/_8sdp"
+                android:text="Dinner"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/_13ssp" />
+
+        </LinearLayout>
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/choicevegCardView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginTop="22dp"
+            android:elevation="@dimen/_1sdp"
+            app:strokeWidth="@dimen/_2sdp"
+            app:strokeColor="@color/yellow_800"
+            app:cardBackgroundColor="@color/yellow_100"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/selectYourPreferenceTextView"/>
+
+
+        <TextView
+            android:id="@+id/categoriesTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:fontFamily="@font/dmsans_medium"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/cardviewImage"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCategories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_list_home_page"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/categoriesTextView"
+            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

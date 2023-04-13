@@ -167,22 +167,27 @@ public class AddNewCardActivity extends AppCompatActivity {
 
                 if(Validation.isStringEmpty(cardName)){
                     binding.nameOnCardInputLayout.setError("Enter name ");
+                    binding.nameOnCardEditText.requestFocus();
                 } else if(binding.nameOnCardInputLayout.isErrorEnabled()){
                     binding.nameOnCardEditText.requestFocus();
                 } else if(Validation.isStringEmpty(cardNumber)){
                     binding.cardNumberInputLayout.setError("Enter card number ");
+                    binding.cardNumberEditText.requestFocus();
                 }  else if(binding.cardNumberInputLayout.isErrorEnabled()){
                     binding.cardNumberEditText.requestFocus();
                 } else if(Validation.isStringEmpty(expiryDate)){
                     binding.expiryInputLayout.setError("Enter expiry date ");
+                    binding.expiryEditText.requestFocus();
                 }  else if(binding.expiryInputLayout.isErrorEnabled()){
                     binding.expiryEditText.requestFocus();
                 } else if(Validation.isStringEmpty(cvv)){
                     binding.cvvInputLayout.setError("Enter cvv ");
+                    binding.cvvEditText.requestFocus();
                 }  else if(binding.cvvInputLayout.isErrorEnabled()){
                     binding.cvvEditText.requestFocus();
                 } else if(Validation.isStringEmpty(billingAddress)){
                     binding.billingAddressInputLayout.setError("Enter billing address");
+                    binding.billingAddressEditText.requestFocus();
                 } else {
 
                     AddCardModel model = new AddCardModel(cardName,cardNumber,expiryDate,cvv,billingAddress);

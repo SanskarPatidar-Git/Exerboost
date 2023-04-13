@@ -1,4 +1,4 @@
-package com.arbutus.exerboost;
+package com.arbutus.exerboost.activity.main.fragments.home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,18 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.arbutus.exerboost.R;
 import com.library.sliderview.SliderViewAdapter;
 
 
-public class autoimagesliderAdapter extends SliderViewAdapter<autoimagesliderAdapter.SliderViewHolder> {
+public class AutoImageSlideAdapter extends SliderViewAdapter<AutoImageSlideAdapter.SliderViewHolder> {
 
     private Context context;
 
-    public autoimagesliderAdapter(Context context) {
+    public AutoImageSlideAdapter(Context context) {
         this.context = context;
     }
-
-
 
     @Override
     public SliderViewHolder onCreateViewHolder(ViewGroup parent) {
@@ -32,11 +31,12 @@ public class autoimagesliderAdapter extends SliderViewAdapter<autoimagesliderAda
 //                .placeholder(R.drawable.ic_logo)
 //                .error(R.drawable.logo_splash)
 //                .into(viewHolder.imageView);
+        viewHolder.imageView.setImageResource(R.drawable.home_image_slider_1);
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return 3;
     }
 
     static class SliderViewHolder extends ViewHolder {

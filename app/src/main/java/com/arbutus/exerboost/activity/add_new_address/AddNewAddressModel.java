@@ -2,6 +2,27 @@ package com.arbutus.exerboost.activity.add_new_address;
 
 public class AddNewAddressModel {
 
+
+    private String streetOne;
+    private String streetTwo ;
+    private   String city;
+    private  String state;
+    private String country;
+    private String postCode ;
+
+    private String addressType;
+
+    public AddNewAddressModel(String streetOne, String streetTwo, String city, String state, String country, String postCode , String addressType) {
+        this.streetOne = streetOne;
+        this.streetTwo = streetTwo;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postCode = postCode;
+        this.addressType = addressType;
+    }
+
+
     public String getStreetOne() {
         return streetOne;
     }
@@ -50,19 +71,13 @@ public class AddNewAddressModel {
         this.postCode = postCode;
     }
 
-    private String streetOne;
-    private String streetTwo ;
-    private   String city;
-    private  String state;
-    private String country;
-    private String postCode ;
-
-    public AddNewAddressModel(String streetOne, String streetTwo, String city, String state, String country, String postCode) {
-        this.streetOne = streetOne;
-        this.streetTwo = streetTwo;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.postCode = postCode;
+    public String getAddressType() {
+        return addressType;
     }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+
 }

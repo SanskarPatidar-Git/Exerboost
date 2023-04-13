@@ -42,5 +42,7 @@
 
     <string name="web_client_id">200175132575-b4fvm221sbgnq9800u94gfp9ufrtpmch.apps.googleusercontent.com</string>
     <string name="delivery_toText">Delivery To</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

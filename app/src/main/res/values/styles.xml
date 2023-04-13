@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-
     <style name="InputTextAppearance">
         <item name="android:textSize">@dimen/_14ssp</item>
         <item name="fontFamily">@font/dmsans_medium</item>
@@ -10,7 +8,7 @@
 
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textColorHint">@color/grey_400</item>
         <item name="hintTextAppearance">@style/HintTextAppearance</item>
 
         <item name="boxStrokeErrorColor">@color/error_color</item>
@@ -18,7 +16,7 @@
         <item name="errorTextColor">@color/error_color</item>
         <item name="errorTextAppearance">@style/HintTextAppearance</item>
 
-        <item name="helperTextTextColor">@color/grey</item>
+        <item name="helperTextTextColor">@color/grey_400</item>
         <item name="helperTextTextAppearance">@style/HintTextAppearance</item>
     </style>
 
