@@ -260,7 +260,6 @@
 
                 android:background="@drawable/border_with_background"
                 app:layout_constraintBottom_toBottomOf="@id/lunchLayout"
-
                android:layout_marginStart="@dimen/_10sdp"
                 app:layout_constraintStart_toEndOf="@+id/lunchLayout"
                 app:layout_constraintTop_toBottomOf="@id/selectMealTimeTextView"
@@ -282,28 +281,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-    <com.simform.custombottomnavigation.SSCustomBottomNavigation
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:ss_backgroundBottomColor="#ffffff"
-        app:ss_circleColor="#ff6f00"
-        app:ss_waveHeight="7"
-        app:ss_countBackgroundColor="#ff6f00"
-        app:ss_countTextColor="#ffffff"
-        app:ss_countTypeface="fonts/graphik_semibold.ttf"
-        app:ss_defaultIconColor="#6200EE"
-        app:ss_iconTextColor="#6200EE"
-        app:ss_iconTextTypeface="fonts/graphik_semibold.ttf"
-        app:ss_rippleColor="#2f424242"
-        app:ss_iconTextSize="14sp"
-        app:ss_selectedIconColor="#ff6f00"
-        app:ss_selectedIconTextColor="#ff6f00"
-        app:ss_shadowColor="#1f212121"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
