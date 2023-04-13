@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayoutOfAddNewCard"
+    tools:context=".activity.payment.card.AddNewCardActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/layout_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameOnCardInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Name on Card"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/guideline_top_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameOnCardEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textAppearance="@style/InputTextAppearance"
+                    android:textColor="@color/colorSecondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cardNumberInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Card Number"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/nameOnCardInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cardNumberEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:maxLength="19"
+                    android:drawableEnd="@drawable/icon_master_card_drawable"
+                    android:textAppearance="@style/InputTextAppearance"
+                    android:textColor="@color/colorSecondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/expiryInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Expiry (MM/YY)"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@+id/cvvInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumberInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/expiryEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLength="5"
+                    android:textAppearance="@style/InputTextAppearance"
+                    android:textColor="@color/colorSecondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cvvInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:layout_marginLeft="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_vertical"
+                app:layout_constraintStart_toEndOf="@+id/expiryInputLayout"
+                app:layout_constraintTop_toTopOf="@+id/expiryInputLayout"
+                app:layout_constraintBottom_toBottomOf="@+id/expiryInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cvvEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:textAppearance="@style/InputTextAppearance"
+                    android:textColor="@color/colorSecondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/billingAddressInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:hint="Billing Address"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/expiryInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/billingAddressEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:maxLines="4"
+                    android:textAppearance="@style/InputTextAppearance"
+                    android:textColor="@color/colorSecondary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/saveCardDetailsCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save This Card Details"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:fontFamily="@font/dmsans_regular"
+                app:layout_constraintTop_toBottomOf="@+id/billingAddressInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start_vertical"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/gradient_app_color"
+                android:letterSpacing="0"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:text="Save"
+                android:fontFamily="@font/dmsans_bold"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12ssp"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@+id/saveCardDetailsCheckBox"
+                app:layout_constraintBottom_toTopOf="@id/guideline_bottom_horizontal"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/guideline_start_vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_top_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

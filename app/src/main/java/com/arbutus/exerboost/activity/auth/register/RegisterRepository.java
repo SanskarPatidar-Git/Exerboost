@@ -51,11 +51,13 @@ public class RegisterRepository {
                     RegisterResponse responseModel = null;
                     try {
                         responseModel = gson.fromJson(response.errorBody().string(), RegisterResponse.class);
+                        failureResponseMutableData.setValue(responseModel.getMessage());
                     } catch (IOException e) {
                         System.out.println("============= IO EXCEPTION ========== "+e.getMessage());
+                        failureResponseMutableData.setValue("Failed to register");
                     }
                     System.out.println("================ NULL MODEL =================== "+responseModel.getMessage());
-                    failureResponseMutableData.setValue(responseModel.getMessage());
+
                 }
 
             }
