@@ -26,4 +26,8 @@
         <item name="android:textSize">@dimen/_12ssp</item>
         <item name="fontFamily">@font/dmsans_medium</item>
     </style>
+
+    <style name="SpinnerTheme">
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:fontFamily">@font/dmsans_medium</item>      </style>
 </resources>

@@ -4,7 +4,12 @@
 
     <color name="colorPrimary">#F0821D</color>
     <color name="colorSecondary">#1C1C1C</color>
-    <color name="grey">#AAACAE</color>
+    <color name="defaultColor">#AAACAE</color>
+<color name="greycolor">#E8E8E8</color>
+    <color name="cardViewBackgroundcolor">#F9F5DC</color>
+    <color name="cardviewBordercolor">#EBD132</color>
+    <color name="textcolorGreen">#3EC032</color>
+
 
     <color name="pin_view_text_hint_default">#FFFFFF</color>
     <color name="pin_view_text_selected">#000000</color>
