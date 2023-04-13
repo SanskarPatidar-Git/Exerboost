@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
     }
 }
 dependencyResolutionManagement {
@@ -16,3 +17,5 @@ rootProject.name = "Exerboost"
 include ':app'
 include ':library-pinview'
 include ':library-sliderview'
+//include ':custombottomnavigation'
+

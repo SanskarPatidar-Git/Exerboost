@@ -60,4 +60,7 @@ dependencies {
 
     //google sign in
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
+
+    //bottomnavigation
+    //implementation project(':custombottomnavigation')
 }
