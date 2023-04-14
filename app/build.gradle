@@ -66,8 +66,5 @@ dependencies {
     // Circular image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //stepindicator
-    //implementation 'com.params.stepview:stepview:1.0.2'
-
     implementation 'com.github.shuhart:stepview:1.5.1'
 }

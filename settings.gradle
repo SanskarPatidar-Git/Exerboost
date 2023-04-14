@@ -17,7 +17,4 @@ rootProject.name = "Exerboost"
 include ':app'
 include ':library-pinview'
 include ':library-sliderview'
-//include ':spacelib'
-//include ':custombottomnavigation'
-
 include ':library-center-circle-bottomnavigationview'
