@@ -22,12 +22,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmsans_regular"
         android:text="1. I AM A"
-        android:textColor="@color/colorSecondary"
-        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/neworder_headline_color"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/iAmACardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_120sdp"
@@ -64,6 +64,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="Veg"
+                android:fontFamily="@font/dmsans_bold"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/vegImageView"
@@ -99,6 +100,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="Non-Veg"
+                android:fontFamily="@font/dmsans_bold"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/nonVegImageView"
@@ -134,6 +136,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="Vegan"
+                android:fontFamily="@font/dmsans_bold"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/veganImageView"
@@ -141,7 +144,7 @@
                 app:layout_constraintTop_toTopOf="@id/veganImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/myGoalIsToTextView"
@@ -150,13 +153,13 @@
         android:layout_marginTop="@dimen/_15sdp"
         android:fontFamily="@font/dmsans_regular"
         android:text="2. MY GOAL IS TO "
-        android:textColor="@color/colorSecondary"
-        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/neworder_headline_color"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/iAmACardView" />
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/stayHealthyCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -190,6 +193,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Stay Healthy"
                 android:textAlignment="center"
+                android:fontFamily="@font/dmsans_bold"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -199,9 +203,9 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/lostFatCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -242,13 +246,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="@font/dmsans_bold"
                 app:layout_constraintTop_toBottomOf="@+id/lostFatImageView" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/ketoDietCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -285,13 +290,14 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/dmsans_bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ketoDietImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
     <TextView
         android:id="@+id/iAmComfortableTextView"
         android:layout_width="0dp"
@@ -299,12 +305,12 @@
         android:layout_marginTop="@dimen/_15sdp"
         android:fontFamily="@font/dmsans_regular"
         android:text="3. I AM COMFORTABLE TO START WITH"
-        android:textColor="@color/colorSecondary"
-        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/neworder_headline_color"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/stayHealthyCardView" />
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/dayOneCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -326,6 +332,7 @@
                 android:text="75 Days"
                 android:textSize="@dimen/_16ssp"
                 android:textColor="@color/colorSecondary"
+                android:fontFamily="@font/dmsans_bold"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toTopOf="@+id/morningTextView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -350,9 +357,9 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/dayTwoCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -381,6 +388,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="@font/dmsans_bold"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
@@ -400,9 +408,9 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/dayThreeCardView"
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
@@ -426,6 +434,7 @@
                 android:textSize="@dimen/_16ssp"
                 android:textColor="@color/colorSecondary"
                 android:textAlignment="center"
+                android:fontFamily="@font/dmsans_bold"
                 app:layout_constraintBottom_toTopOf="@+id/morningThirdTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -448,7 +457,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/dayThreeTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
    <TextView
        android:id="@+id/totalPriceTextView"
     android:layout_width="0dp"
@@ -456,21 +465,23 @@
     android:layout_marginTop="@dimen/_15sdp"
     android:fontFamily="@font/dmsans_regular"
     android:text="4.TOTAL PRICE YOU WILL PAY"
-    android:textColor="@color/colorSecondary"
-    android:textSize="@dimen/_15ssp"
+    android:textColor="@color/neworder_headline_color"
+    android:textSize="@dimen/_14ssp"
     app:layout_constraintStart_toStartOf="@+id/guideline_left"
     app:layout_constraintTop_toBottomOf="@+id/dayOneCardView" />
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/selectYourChoiceCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_4sdp"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintTop_toBottomOf="@+id/totalPriceTextView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -483,21 +494,21 @@
                 android:layout_height="wrap_content"
                 android:text="Select Your Choices Above and proceed to checkout"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_16ssp"
+                android:paddingTop="@dimen/_15sdp"
+                android:textColor="@color/selectcolor"
+                android:textSize="@dimen/_13ssp"
+                android:layout_marginTop="@dimen/_15sdp"
+
                 app:layout_constraintBottom_toTopOf="@+id/proceedButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/proceedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_100sdp"
-                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_margin="@dimen/_16sdp"
                 android:background="@drawable/gradient_app_color"
                 android:letterSpacing="0"
                 android:text="Proceed to Checkout"
@@ -511,7 +522,7 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -525,14 +536,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/_16sdp" />
+        app:layout_constraintGuide_end="@dimen/_20sdp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="390dp" />
+        app:layout_constraintGuide_begin="@dimen/_16sdp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
