@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_my_profile"
+        android:title="My Profile"
+        android:icon="@drawable/nav_my_profile"/>
+
+    <item
+        android:id="@+id/nav_payment_method"
+        android:title="Payment Method"
+        android:icon="@drawable/nav_payment_method"/>
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/nav_settings"/>
+    <item
+        android:id="@+id/nav_help"
+        android:title="Help"
+        android:icon="@drawable/nav_help_image"/>
+    <item
+        android:id="@+id/nav_privacy_policy"
+        android:title="Privacy Policy"
+        android:icon="@drawable/privacy_policy_image"/>
+
+
+</menu>
