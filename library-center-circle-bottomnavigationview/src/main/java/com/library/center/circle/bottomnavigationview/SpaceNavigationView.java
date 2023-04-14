@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.luseen.spacenavigation;
+package com.library.center.circle.bottomnavigationview;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -24,10 +24,6 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IdRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -38,6 +34,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.IdRes;
+import androidx.core.content.ContextCompat;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,11 +70,11 @@ public class SpaceNavigationView extends RelativeLayout {
     private static final int MAX_SPACE_ITEM_SIZE = 4;
 
     private static final int MIN_SPACE_ITEM_SIZE = 2;
-    private final int spaceNavigationHeight = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.space_navigation_height);
-    private final int mainContentHeight = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.main_content_height);
-    private final int centreContentWight = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.centre_content_width);
-    private final int itemContentWight = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.item_content_width);
-    private final int centreButtonSize = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.space_centre_button_default_size);
+    private final int spaceNavigationHeight = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.space_navigation_height);
+    private final int mainContentHeight = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.main_content_height);
+    private final int centreContentWight = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.centre_content_width);
+    private final int itemContentWight = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.item_content_width);
+    private final int centreButtonSize = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.space_centre_button_default_size);
     private List<SpaceItem> spaceItems = new ArrayList<>();
     private List<View> spaceItemList = new ArrayList<>();
     private List<RelativeLayout> badgeList = new ArrayList<>();
@@ -157,20 +159,20 @@ public class SpaceNavigationView extends RelativeLayout {
         if (attrs != null) {
             Resources resources = getResources();
 
-            TypedArray typedArray = context.obtainStyledAttributes(attrs, com.luseen.spacenavigation.R.styleable.SpaceNavigationView);
-            spaceItemIconSize = typedArray.getDimensionPixelSize(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_space_item_icon_size, resources.getDimensionPixelSize(com.luseen.spacenavigation.R.dimen.space_item_icon_default_size));
-            spaceItemIconOnlySize = typedArray.getDimensionPixelSize(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_space_item_icon_only_size, resources.getDimensionPixelSize(com.luseen.spacenavigation.R.dimen.space_item_icon_only_size));
-            spaceItemTextSize = typedArray.getDimensionPixelSize(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_space_item_text_size, resources.getDimensionPixelSize(com.luseen.spacenavigation.R.dimen.space_item_text_default_size));
-            spaceItemIconOnlySize = typedArray.getDimensionPixelSize(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_space_item_icon_only_size, resources.getDimensionPixelSize(com.luseen.spacenavigation.R.dimen.space_item_icon_only_size));
-            spaceBackgroundColor = typedArray.getColor(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_space_background_color, resources.getColor(com.luseen.spacenavigation.R.color.space_default_color));
-            centreButtonColor = typedArray.getColor(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_centre_button_color, resources.getColor(com.luseen.spacenavigation.R.color.centre_button_color));
-            activeSpaceItemColor = typedArray.getColor(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_active_item_color, resources.getColor(com.luseen.spacenavigation.R.color.space_white));
-            inActiveSpaceItemColor = typedArray.getColor(com.luseen.spacenavigation.R.styleable.SpaceNavigationView_inactive_item_color, resources.getColor(com.luseen.spacenavigation.R.color.default_inactive_item_color));
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView);
+            spaceItemIconSize = typedArray.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_space_item_icon_size, resources.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.dimen.space_item_icon_default_size));
+            spaceItemIconOnlySize = typedArray.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_space_item_icon_only_size, resources.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.dimen.space_item_icon_only_size));
+            spaceItemTextSize = typedArray.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_space_item_text_size, resources.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.dimen.space_item_text_default_size));
+            spaceItemIconOnlySize = typedArray.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_space_item_icon_only_size, resources.getDimensionPixelSize(com.library.center.circle.bottomnavigationview.R.dimen.space_item_icon_only_size));
+            spaceBackgroundColor = typedArray.getColor(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_space_background_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.space_default_color));
+            centreButtonColor = typedArray.getColor(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_centre_button_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.centre_button_color));
+            activeSpaceItemColor = typedArray.getColor(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_active_item_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.space_white));
+            inActiveSpaceItemColor = typedArray.getColor(com.library.center.circle.bottomnavigationview.R.styleable.SpaceNavigationView_inactive_item_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.default_inactive_item_color));
             centreButtonIcon = typedArray.getResourceId(R.styleable.SpaceNavigationView_centre_button_icon, R.drawable.near_me);
             isCentrePartLinear = typedArray.getBoolean(R.styleable.SpaceNavigationView_centre_part_linear, false);
             activeCentreButtonIconColor = typedArray.getColor(R.styleable.SpaceNavigationView_active_centre_button_icon_color, resources.getColor(R.color.space_white));
-            inActiveCentreButtonIconColor = typedArray.getColor(R.styleable.SpaceNavigationView_inactive_centre_button_icon_color, resources.getColor(com.luseen.spacenavigation.R.color.default_inactive_item_color));
-            activeCentreButtonBackgroundColor = typedArray.getColor(R.styleable.SpaceNavigationView_active_centre_button_background_color, resources.getColor(com.luseen.spacenavigation.R.color.centre_button_color));
+            inActiveCentreButtonIconColor = typedArray.getColor(R.styleable.SpaceNavigationView_inactive_centre_button_icon_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.default_inactive_item_color));
+            activeCentreButtonBackgroundColor = typedArray.getColor(R.styleable.SpaceNavigationView_active_centre_button_background_color, resources.getColor(com.library.center.circle.bottomnavigationview.R.color.centre_button_color));
 
             typedArray.recycle();
         }
@@ -184,37 +186,37 @@ public class SpaceNavigationView extends RelativeLayout {
          * Set default colors and sizes
          */
         if (spaceBackgroundColor == NOT_DEFINED)
-            spaceBackgroundColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.space_default_color);
+            spaceBackgroundColor = ContextCompat.getColor(context, com.library.center.circle.bottomnavigationview.R.color.space_default_color);
 
         if (centreButtonColor == NOT_DEFINED)
-            centreButtonColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.centre_button_color);
+            centreButtonColor = ContextCompat.getColor(context,com.library.center.circle.bottomnavigationview.R.color.centre_button_color);
 
         if (centreButtonIcon == NOT_DEFINED)
             centreButtonIcon = R.drawable.near_me;
 
         if (activeSpaceItemColor == NOT_DEFINED)
-            activeSpaceItemColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.space_white);
+            activeSpaceItemColor = ContextCompat.getColor(context, com.library.center.circle.bottomnavigationview.R.color.space_white);
 
         if (inActiveSpaceItemColor == NOT_DEFINED)
-            inActiveSpaceItemColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.default_inactive_item_color);
+            inActiveSpaceItemColor = ContextCompat.getColor(context, com.library.center.circle.bottomnavigationview.R.color.default_inactive_item_color);
 
         if (spaceItemTextSize == NOT_DEFINED)
-            spaceItemTextSize = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.space_item_text_default_size);
+            spaceItemTextSize = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.space_item_text_default_size);
 
         if (spaceItemIconSize == NOT_DEFINED)
-            spaceItemIconSize = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.space_item_icon_default_size);
+            spaceItemIconSize = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.space_item_icon_default_size);
 
         if (spaceItemIconOnlySize == NOT_DEFINED)
-            spaceItemIconOnlySize = (int) getResources().getDimension(com.luseen.spacenavigation.R.dimen.space_item_icon_only_size);
+            spaceItemIconOnlySize = (int) getResources().getDimension(com.library.center.circle.bottomnavigationview.R.dimen.space_item_icon_only_size);
 
         if (centreButtonRippleColor == NOT_DEFINED)
-            centreButtonRippleColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.colorBackgroundHighlightWhite);
+            centreButtonRippleColor = ContextCompat.getColor(context, com.library.center.circle.bottomnavigationview.R.color.colorBackgroundHighlightWhite);
 
         if (activeCentreButtonIconColor == NOT_DEFINED)
             activeCentreButtonIconColor = ContextCompat.getColor(context, R.color.space_white);
 
         if (inActiveCentreButtonIconColor == NOT_DEFINED)
-            inActiveCentreButtonIconColor = ContextCompat.getColor(context, com.luseen.spacenavigation.R.color.default_inactive_item_color);
+            inActiveCentreButtonIconColor = ContextCompat.getColor(context, com.library.center.circle.bottomnavigationview.R.color.default_inactive_item_color);
 
         /**
          * Set main layout size and color

@@ -13,15 +13,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"/>
+        app:layout_constraintBottom_toTopOf="@+id/spaceBottomNavigationView"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
+    <com.library.center.circle.bottomnavigationview.SpaceNavigationView
+        android:id="@+id/spaceBottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:gravity="bottom"
+
+        app:active_item_color="@color/colorPrimary"
+        app:centre_button_color="@color/black"
+        app:inactive_item_color="@color/white"
+        app:space_background_color="@color/blue_50"
+        app:centre_button_icon="@drawable/ic_add"
+        app:space_item_icon_size="@dimen/space_item_icon_default_size"
+        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+        app:space_item_text_size="@dimen/space_item_text_default_size"
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

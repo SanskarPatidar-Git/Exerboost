@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/library-center-circle-bottomnavigationview" />
             <option value="$PROJECT_DIR$/library-pinview" />
             <option value="$PROJECT_DIR$/library-sliderview" />
           </set>

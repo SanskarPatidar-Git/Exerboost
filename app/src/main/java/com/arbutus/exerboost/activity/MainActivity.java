@@ -12,6 +12,7 @@ import com.arbutus.exerboost.activity.main.fragments.home.HomeFragment;
 import com.arbutus.exerboost.databinding.ActivityMainBinding;
 import com.arbutus.exerboost.utilities.FragmentController;
 import com.google.android.material.navigation.NavigationBarView;
+import com.library.center.circle.bottomnavigationview.SpaceItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,17 +28,22 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager = getSupportFragmentManager();
 
+
+        binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.ic_search));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.ic_search));
+
         FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
         initListener();
     }
 
     private void initListener() {
 
-        binding.bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                return true;
-            }
-        });
+//        binding..setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                return true;
+//            }
+//        });
     }
 }

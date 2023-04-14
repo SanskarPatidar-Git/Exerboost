@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_4sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_6sdp">
+
+
+        <RadioButton
+            android:id="@+id/radioAddress"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/moreImageVew"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/radioAddress"
+            android:src="@drawable/ic_more" />
+
+        <TextView
+            android:id="@+id/addressTypeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Home Address"
+            android:fontFamily="@font/dmsans_medium"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginLeft="@dimen/_6sdp"
+            app:layout_constraintEnd_toStartOf="@+id/moreImageVew"
+            app:layout_constraintBottom_toBottomOf="@+id/radioAddress"
+            app:layout_constraintStart_toEndOf="@+id/radioAddress"
+            app:layout_constraintTop_toTopOf="@+id/radioAddress" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="Marimata square , indore"
+            android:fontFamily="@font/dmsans_medium"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@+id/addressTypeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/addressTypeTextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -9,10 +9,11 @@ public class AddNewAddressModel {
     private  String state;
     private String country;
     private String postCode ;
-
     private String addressType;
 
-    public AddNewAddressModel(String streetOne, String streetTwo, String city, String state, String country, String postCode , String addressType) {
+    private boolean isDefaultAddress;
+
+    public AddNewAddressModel(String streetOne, String streetTwo, String city, String state, String country, String postCode , String addressType , boolean isDefaultAddress) {
         this.streetOne = streetOne;
         this.streetTwo = streetTwo;
         this.city = city;
@@ -20,8 +21,16 @@ public class AddNewAddressModel {
         this.country = country;
         this.postCode = postCode;
         this.addressType = addressType;
+        this.isDefaultAddress = isDefaultAddress;
     }
 
+    public boolean isDefaultAddress() {
+        return isDefaultAddress;
+    }
+
+    public void setDefaultAddress(boolean defaultAddress) {
+        isDefaultAddress = defaultAddress;
+    }
 
     public String getStreetOne() {
         return streetOne;

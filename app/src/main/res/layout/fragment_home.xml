@@ -112,7 +112,7 @@
 
         <LinearLayout
             android:id="@+id/vegLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:background="@drawable/drawable_green_border"
@@ -137,7 +137,7 @@
 
         <LinearLayout
             android:id="@+id/nonvegLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:background="@drawable/drawable_red_border"
@@ -177,92 +177,112 @@
 
         <ImageView
             android:id="@+id/cardviewImage"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_150sdp"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_170sdp"
             android:layout_gravity="start"
             android:elevation="@dimen/_10sdp"
             android:src="@drawable/card_view_image"
-            app:layout_constraintStart_toStartOf="@id/choicevegCardView"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
             app:layout_constraintTop_toTopOf="@+id/choicevegCardView"/>
 
 
-        <TextView
-            android:id="@+id/selectMealTimeTextView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_medium"
-            android:gravity="center"
-            android:text="Select Meal Time*"
-            android:textColor="@color/colorSecondary"
-            android:elevation="@dimen/_6sdp"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintStart_toStartOf="@id/lunchLayout"
-            app:layout_constraintEnd_toEndOf="@+id/dinnerLayout"
-            app:layout_constraintBottom_toTopOf="@+id/lunchLayout"
-            app:layout_constraintTop_toTopOf="@+id/choicevegCardView"/>
-
-        <LinearLayout
-            android:id="@+id/lunchLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/_2sdp"
-            android:gravity="center"
-            android:background="@drawable/drawable_green_border"
-            app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
-            app:layout_constraintStart_toEndOf="@+id/cardviewImage"
-            app:layout_constraintEnd_toStartOf="@+id/dinnerLayout"
-            app:layout_constraintTop_toBottomOf="@id/selectMealTimeTextView">
-
-            <TextView
-                android:id="@+id/lunchTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/dmsans_medium"
-                android:padding="@dimen/_8sdp"
-                android:text="Lunch"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_13ssp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/dinnerLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/_2sdp"
-            android:gravity="center"
-            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_height="0dp"
+            android:elevation="1.1dp"
             android:layout_marginRight="@dimen/_4sdp"
-            android:background="@drawable/drawable_red_border"
-            app:layout_constraintBottom_toBottomOf="@id/lunchLayout"
-            app:layout_constraintStart_toEndOf="@+id/lunchLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
             app:layout_constraintEnd_toEndOf="@+id/choicevegCardView"
-            app:layout_constraintTop_toTopOf="@id/lunchLayout">
+            app:layout_constraintStart_toEndOf="@+id/cardviewImage"
+            app:layout_constraintTop_toTopOf="@+id/choicevegCardView">
 
             <TextView
-                android:id="@+id/dinnerTextView"
-                android:layout_width="wrap_content"
+                android:id="@+id/selectMealTimeTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:elevation="@dimen/_6sdp"
                 android:fontFamily="@font/dmsans_medium"
-                android:padding="@dimen/_8sdp"
-                android:text="Dinner"
+                android:gravity="center"
+                android:text="Select Meal Time*"
                 android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@+id/lunchLayout"
+                app:layout_constraintEnd_toEndOf="@+id/dinnerLayout"
+                app:layout_constraintStart_toStartOf="@id/lunchLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-        </LinearLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/lunchLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="1.1dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dinnerLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selectMealTimeTextView"
+                app:strokeColor="@color/textcolorGreen"
+                app:strokeWidth="@dimen/_1sdp"
+                app:cardCornerRadius="@dimen/_16sdp">
 
+                <TextView
+                    android:id="@+id/lunchTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Lunch"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/_12ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dinnerLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:background="@drawable/drawable_red_border"
+                android:elevation="1.1dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/lunchLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lunchLayout"
+                app:layout_constraintTop_toTopOf="@id/lunchLayout"
+                app:strokeColor="@color/red_400"
+                app:strokeWidth="@dimen/_1sdp"
+                app:cardCornerRadius="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/dinnerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Dinner"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/_12ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/choicevegCardView"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_90sdp"
-            android:layout_marginTop="22dp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:elevation="@dimen/_1sdp"
-            app:strokeWidth="@dimen/_2sdp"
-            app:strokeColor="@color/yellow_800"
-            app:cardBackgroundColor="@color/yellow_100"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#EBD132"
+            app:cardBackgroundColor="#F9F5DC"
             app:cardCornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintHorizontal_bias="0.512"

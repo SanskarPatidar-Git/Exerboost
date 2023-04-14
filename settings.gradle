@@ -20,3 +20,4 @@ include ':library-sliderview'
 //include ':spacelib'
 //include ':custombottomnavigation'
 
+include ':library-center-circle-bottomnavigationview'

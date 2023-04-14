@@ -7,7 +7,6 @@
     android:id="@+id/rootLayoutOfAddNewAddress"
     tools:context=".activity.add_new_address.AddNewAddressActivity">
 
-
     <include
         android:id="@+id/header"
         layout="@layout/layout_header"
@@ -20,7 +19,7 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/saveButton"
         app:layout_constraintTop_toBottomOf="@+id/header">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -160,6 +159,7 @@
                 android:textAppearance="@style/InputTextAppearance"
                 android:textColor="@color/colorSecondary" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <LinearLayout
             android:id="@+id/addressTypeLayout"
             android:layout_width="0dp"
@@ -185,33 +185,18 @@
 
 
         <CheckBox
+            android:id="@+id/setAsDefaultCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="  Set as Default Address"
+            android:text=" Set as Default Address"
             android:textSize="@dimen/_13sdp"
-            app:layout_constraintBottom_toTopOf="@id/saveButton"
+            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toEndOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/addressTypeLayout" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveButton"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_46sdp"
-            android:layout_marginTop="@dimen/_100sdp"
-            android:layout_marginBottom="@dimen/_12sdp"
-            android:background="@drawable/gradient_app_color"
-            android:letterSpacing="0"
-            android:text="Save"
-            android:textAllCaps="false"
-            android:textSize="@dimen/_12ssp"
-            app:backgroundTint="@null"
-            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_top"
@@ -245,4 +230,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_46sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/gradient_app_color"
+        android:letterSpacing="0"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12ssp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,15 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.luseen.spacenavigation;
+package com.library.center.circle.bottomnavigationview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.v4.content.ContextCompat;
 import android.widget.RelativeLayout;
+
+import androidx.core.content.ContextCompat;
 
 @SuppressLint("ViewConstructor")
 class BezierView extends RelativeLayout {

@@ -1,8 +1,9 @@
-package com.luseen.spacenavigation;
+package com.library.center.circle.bottomnavigationview;
 
 import android.content.Context;
-import android.support.design.widget.FloatingActionButton;
 import android.view.MotionEvent;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * Created by Chatikyan on 10.11.2016.

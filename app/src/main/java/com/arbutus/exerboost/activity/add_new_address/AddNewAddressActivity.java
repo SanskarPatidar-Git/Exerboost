@@ -207,6 +207,7 @@ public class AddNewAddressActivity extends AppCompatActivity {
                 String state = binding.stateEditText.getText().toString().trim();
                 String country = binding.countryEditText.getText().toString().trim();
                 String postCode = binding.postCodeEditText.getText().toString().trim();
+                boolean isDefault = false;
 
                 //============================= VALIDATE FIELDS ================================
 
@@ -257,7 +258,10 @@ public class AddNewAddressActivity extends AppCompatActivity {
 
                 } else {
 
-                    AddNewAddressModel model = new AddNewAddressModel(streetOne,streetTwo,city,state,country,postCode,addressType);
+                    if(binding.setAsDefaultCheckBox.isChecked())
+                        isDefault = true;
+
+                    AddNewAddressModel model = new AddNewAddressModel(streetOne,streetTwo,city,state,country,postCode,addressType , isDefault);
                     addNewAddress(model);
                 }
             }
