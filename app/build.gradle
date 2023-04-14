@@ -68,4 +68,6 @@ dependencies {
 
     //stepindicator
     //implementation 'com.params.stepview:stepview:1.0.2'
+
+    implementation 'com.github.shuhart:stepview:1.5.1'
 }

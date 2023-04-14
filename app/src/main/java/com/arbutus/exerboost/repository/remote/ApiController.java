@@ -1,8 +1,21 @@
 package com.arbutus.exerboost.repository.remote;
 
+import android.app.Application;
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+
+import com.arbutus.exerboost.activity.MyBaseApplication;
+import com.arbutus.exerboost.repository.local.LocalController;
+import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.utilities.AppConstants;
 
+import java.io.IOException;
+
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -14,9 +27,23 @@ public class ApiController {
 
     private ApiController(){
 
+        //Get token from shared preference
+        String authToken = LocalSets.getAuthToken(LocalController.getInstance(MyBaseApplication.getContext()).getPreferences());
+        System.out.println("============= TOKEN ================ "+authToken);
+
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(new Interceptor() {
+            @NonNull
+            @Override
+            public Response intercept(@NonNull Chain chain) throws IOException {
+
+                Request request = chain.request().newBuilder()
+                        .addHeader("Authorization","Bearer "+authToken)
+                        .build();
+                return chain.proceed(request);
+            }
+        }).build();
 
 
         retrofit = new Retrofit.Builder()
