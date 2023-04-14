@@ -1,17 +1,15 @@
 package com.arbutus.exerboost.activity;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.main.fragments.home.HomeFragment;
 import com.arbutus.exerboost.databinding.ActivityMainBinding;
 import com.arbutus.exerboost.utilities.FragmentController;
-import com.google.android.material.navigation.NavigationBarView;
 import com.library.center.circle.bottomnavigationview.SpaceItem;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,22 +26,29 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager = getSupportFragmentManager();
 
+        setUpToolbar();
 
         binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.ic_search));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.ic_search));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_home_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_more_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_buy_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_profile_img));
 
         FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
         initListener();
     }
 
+    private void setUpToolbar() {
+
+        setSupportActionBar(binding.header.toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerLayout,binding.header.toolbar,R.string.open_navigation_drawer,R.string.close_navigation_drawer);
+        binding.drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
     private void initListener() {
 
-//        binding..setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                return true;
-//            }
-//        });
+
     }
 }

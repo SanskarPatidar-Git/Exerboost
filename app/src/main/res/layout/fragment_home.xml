@@ -9,50 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/deliveryToTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_medium"
-            android:drawableRight="@drawable/drawable_arrow_down"
-            android:drawablePadding="@dimen/_4sdp"
-            android:textColor="@color/black"
-            android:text="@string/delivery_toText"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="@+id/guideline_top" />
-
-        <TextView
-            android:id="@+id/locationTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Marimata square"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
-            android:singleLine="true"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintHorizontal_bias="0.039"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/deliveryToTextView" />
-
-        <ImageView
-            android:id="@+id/notificationImageView"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintTop_toTopOf="@+id/guideline_top"
-            android:src="@drawable/notification" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/locationLayout"
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_25sdp"
             app:cardCornerRadius="@dimen/_4sdp"
-            app:cardBackgroundColor="@color/greycolor"
+            app:cardBackgroundColor="#E8E8E8"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/locationTextView">
+            app:layout_constraintTop_toBottomOf="@id/guideline_top">
 
             <TextView
                 android:id="@+id/searchTextView"
@@ -61,13 +26,14 @@
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
 
-                android:drawableRight="@drawable/ic_search"
+                android:drawableRight="@drawable/drawable_ic_search"
                 android:drawablePadding="@dimen/_4sdp"
-                android:fontFamily="@font/dmsans_bold"
+                android:fontFamily="@font/dmsans_regular"
                 android:gravity="center_vertical"
+
                 android:hint="Search"
                 android:padding="@dimen/_5sdp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp" />
 
         </androidx.cardview.widget.CardView>
@@ -76,8 +42,7 @@
         <com.library.sliderview.SliderView
             android:id="@+id/imageSlider"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_height="@dimen/_170sdp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/locationLayout"
@@ -106,57 +71,73 @@
             android:text="Select Diet Preference:"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toStartOf="@id/vegLayout"
+            app:layout_constraintEnd_toStartOf="@id/selectDietChoiceLayout"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/imageSlider" />
 
         <LinearLayout
-            android:id="@+id/vegLayout"
+            android:id="@+id/selectDietChoiceLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@drawable/drawable_green_border"
+            android:orientation="horizontal"
+            android:gravity="end"
             app:layout_constraintBottom_toBottomOf="@id/dietPreferenceTextView"
             app:layout_constraintStart_toEndOf="@+id/dietPreferenceTextView"
-            app:layout_constraintEnd_toStartOf="@+id/nonvegLayout"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintTop_toTopOf="@id/dietPreferenceTextView">
 
-            <TextView
-                android:id="@+id/vegTextView"
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/vegLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_6sdp"
-                android:drawableLeft="@drawable/veg_green_circle"
-                android:drawablePadding="@dimen/_6sdp"
-                android:fontFamily="@font/dmsans_regular"
-                android:text="Veg"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_11sdp" />
+                android:gravity="center"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:strokeWidth="@dimen/_1sdp"
+                app:strokeColor="@color/textcolorGreen">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/vegTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/veg_green_circle"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:text="Veg"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/_11sdp" />
 
-        <LinearLayout
-            android:id="@+id/nonvegLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:background="@drawable/drawable_red_border"
-            app:layout_constraintBottom_toBottomOf="@id/vegLayout"
-            app:layout_constraintEnd_toStartOf="@id/guideline_right"
-            app:layout_constraintStart_toEndOf="@+id/vegLayout"
-            app:layout_constraintTop_toTopOf="@id/vegLayout">
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/nonvegTextView"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/nonvegLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_6sdp"
-                android:drawableLeft="@drawable/nonveg_red_circle"
-                android:drawablePadding="4dp"
-                android:fontFamily="@font/dmsans_regular"
-                android:text="Non-Veg"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_11sdp" />
+                android:layout_marginStart="@dimen/_5sdp"
+
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:strokeWidth="@dimen/_1sdp"
+                app:strokeColor="@color/red_400"
+
+                app:layout_constraintBottom_toBottomOf="@id/vegLayout"
+                app:layout_constraintEnd_toStartOf="@id/guideline_right"
+                app:layout_constraintStart_toEndOf="@+id/vegLayout"
+                app:layout_constraintTop_toTopOf="@id/vegLayout">
+
+                <TextView
+                    android:id="@+id/nonvegTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/nonveg_red_circle"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:text="Non-Veg"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/_11sdp" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
@@ -164,7 +145,7 @@
             android:id="@+id/selectYourPreferenceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="@dimen/_28sdp"
             android:fontFamily="@font/dmsans_medium"
             android:gravity="start"
             android:text="Select Your Preference:"

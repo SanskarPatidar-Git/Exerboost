@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.arbutus.exerboost.activity.MainActivity;
+import com.arbutus.exerboost.activity.add_new_address.AddNewAddressActivity;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.activity.auth.register.RegisterActivity;
@@ -169,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
                 System.out.println("SUCCESS ++++++++++++++++++ ");
                 repository.setUserDataToLocal(LoginActivity.this);
 
-                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class,null);
+                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, AddNewAddressActivity.class,null);
             }
         });
     }

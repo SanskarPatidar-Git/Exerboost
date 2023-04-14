@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
@@ -283,6 +285,27 @@ public class AddNewAddressActivity extends AppCompatActivity {
     private void observeResponse(AddNewAddressModel model) {
         AddNewAddressRepository repository = new AddNewAddressRepository();
         repository.addNewAddress(model);
+
+        LiveData<String> successLiveData = repository.getSuccessResponseMutableData();
+        LiveData<String> failureLiveData = repository.getFailureResponseMutableData();
+
+        successLiveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                progressDialog.dismiss();
+                Toast.makeText(AddNewAddressActivity.this, s, Toast.LENGTH_SHORT).show();
+                onBackPressed();
+            }
+        });
+
+        failureLiveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                progressDialog.dismiss();
+                Toast.makeText(AddNewAddressActivity.this, s, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void  setSpinnerAdapter(){
