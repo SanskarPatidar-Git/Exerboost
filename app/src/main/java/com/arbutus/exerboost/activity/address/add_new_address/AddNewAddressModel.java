@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.add_new_address;
+package com.arbutus.exerboost.activity.address.add_new_address;
 
 public class AddNewAddressModel {
 

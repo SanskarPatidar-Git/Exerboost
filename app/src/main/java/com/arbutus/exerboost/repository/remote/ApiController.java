@@ -33,17 +33,7 @@ public class ApiController {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(new Interceptor() {
-            @NonNull
-            @Override
-            public Response intercept(@NonNull Chain chain) throws IOException {
-
-                Request request = chain.request().newBuilder()
-                        .addHeader("Authorization","Bearer "+authToken)
-                        .build();
-                return chain.proceed(request);
-            }
-        }).build();
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
 
         retrofit = new Retrofit.Builder()

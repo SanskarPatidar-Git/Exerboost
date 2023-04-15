@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.arbutus.exerboost.activity.MainActivity;
-import com.arbutus.exerboost.activity.add_new_address.AddNewAddressActivity;
+import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressActivity;
 import com.arbutus.exerboost.activity.auth.forgot_password.ForgotPasswordActivity;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
@@ -23,7 +23,6 @@ import com.arbutus.exerboost.activity.auth.register.RegisterActivity;
 import com.arbutus.exerboost.activity.auth.social.GoogleSignIn;
 import com.arbutus.exerboost.databinding.ActivityLoginBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
-import com.arbutus.exerboost.utilities.AppConstants;
 import com.arbutus.exerboost.utilities.Validation;
 
 public class LoginActivity extends AppCompatActivity {
@@ -176,7 +175,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
                 System.out.println("SUCCESS ++++++++++++++++++ ");
                 repository.setUserDataToLocal(LoginActivity.this);
 
-                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, AddNewAddressActivity.class,null);
+                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class,null);
             }
         });
     }
