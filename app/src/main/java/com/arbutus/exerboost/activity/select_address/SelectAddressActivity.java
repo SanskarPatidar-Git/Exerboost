@@ -40,9 +40,9 @@ public class SelectAddressActivity extends AppCompatActivity {
                 // You should specify only stepsNumber or steps array of strings.
                 // In case you specify both steps array is chosen.
                 .steps(new ArrayList<String>() {{
-                    add("First step");
-                    add("Second step");
-                    add("Third step");
+                    add("Address");
+                    add("Payment");
+                    add("Summary");
                 }})
                 // You should specify only steps number or steps array of strings.
                 // In case you specify both steps array is chosen.

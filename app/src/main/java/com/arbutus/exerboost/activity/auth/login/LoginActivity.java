@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.arbutus.exerboost.activity.MainActivity;
 import com.arbutus.exerboost.activity.add_new_address.AddNewAddressActivity;
+import com.arbutus.exerboost.activity.auth.forgot_password.ForgotPasswordActivity;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.activity.auth.register.RegisterActivity;
@@ -108,7 +109,12 @@ public class LoginActivity extends AppCompatActivity {
                 googleSignIn.signIn();
             }
         });
-
+binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        AppBoilerPlateCode.navigateToActivity(LoginActivity.this, ForgotPasswordActivity.class,null);
+    }
+});
         binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

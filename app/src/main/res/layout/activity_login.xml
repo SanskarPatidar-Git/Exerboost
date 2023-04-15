@@ -52,7 +52,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_25sdp"
             android:hint="Enter Email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/enterYourEmailAddressTextView"
@@ -75,9 +75,9 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:hint="Enter Password"
-           app:layout_constraintEnd_toStartOf="@id/guideline_right"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/emailAddressInputLayout">
 
@@ -92,7 +92,18 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/forgotPasswordTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Forgot Password ?"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/colorSecondary"
+            android:fontFamily="@font/dmsans_bold"
 
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
@@ -106,10 +117,10 @@
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
             app:backgroundTint="@null"
-            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
             app:layout_constraintBottom_toTopOf="@id/sign_in_with_google"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"/>
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/sign_in_with_google"
@@ -181,6 +192,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/_16sdp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

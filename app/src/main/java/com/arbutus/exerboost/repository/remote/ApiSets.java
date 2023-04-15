@@ -1,6 +1,8 @@
 package com.arbutus.exerboost.repository.remote;
 
 import com.arbutus.exerboost.activity.add_new_address.AddNewAddressModel;
+import com.arbutus.exerboost.activity.auth.forgot_password.ForgotPasswordModel;
+import com.arbutus.exerboost.activity.auth.forgot_password.ForgotPasswordResponse;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.activity.auth.login.model.response.LoginResponse;
 import com.arbutus.exerboost.activity.auth.register.models.request.RegisterModel;
@@ -28,4 +30,7 @@ public interface ApiSets {
 
     @PATCH("app/user/update-residentialAddress")
     Call<ResponseBody> addNewAddress(@Body AddNewAddressModel model);
+
+    @POST("app/auth/forgot-password")
+    Call<ForgotPasswordResponse> forgotPasswordUser(ForgotPasswordModel forgotPasswordModel);
 }

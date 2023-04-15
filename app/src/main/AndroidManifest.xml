@@ -42,12 +42,8 @@
         </activity>
         <activity
             android:name=".activity.select_address.SelectAddressActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.auth.register.RegisterActivity"
@@ -55,6 +51,9 @@
         <activity
             android:name=".activity.auth.forgot_password.ForgotPasswordActivity"
             android:exported="false" />
+
+
+
         <activity
             android:name=".activity.auth.login.LoginActivity"
             android:exported="false"/>
@@ -66,7 +65,13 @@
             android:exported="false"/>
         <activity
             android:name=".activity.SplashActivity"
-            android:exported="false"/>
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>

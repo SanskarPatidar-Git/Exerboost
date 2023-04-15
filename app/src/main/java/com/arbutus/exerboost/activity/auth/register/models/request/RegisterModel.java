@@ -10,7 +10,7 @@ public class RegisterModel {
     @SerializedName("password")
     private String password;
 
-    @SerializedName("confirm password")
+    @SerializedName("confirm_password")
     private String confirmPassword;
 
     @SerializedName("policyAccept")
