@@ -37,6 +37,8 @@
            android:elevation="@dimen/_8sdp"
 
            app:centre_button_icon="@drawable/whatsapp_img"
+           app:active_item_color="@color/colorPrimary"
+           app:active_centre_button_icon_color="@color/colorPrimary"
            app:active_centre_button_background_color="@color/white"
            app:centre_button_color="@color/white"
            app:space_background_color="@color/white"
@@ -56,6 +58,12 @@
         android:id="@+id/navigationDrawerView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start">
+
+        <include
+            android:id="@+id/navigationItems"
+            layout="@layout/navigation_layout"/>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

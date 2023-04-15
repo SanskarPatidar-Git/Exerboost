@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.main.fragments.home.HomeFragment;
 import com.arbutus.exerboost.databinding.ActivityMainBinding;
 import com.arbutus.exerboost.utilities.FragmentController;
 import com.library.center.circle.bottomnavigationview.SpaceItem;
+import com.library.center.circle.bottomnavigationview.SpaceOnClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setUpToolbar();
 
         binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_home_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_more_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_buy_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_profile_img));
+        setUpBottomNavigation();
+
+
+
 
         FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
         initListener();
@@ -47,8 +51,50 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
     }
 
+    private void setUpBottomNavigation() {
+
+
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_home_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_more_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_buy_img));
+        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.person_cartoon_img));
+
+        binding.spaceBottomNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+            @Override
+            public void onCentreButtonClick() {
+
+            }
+
+            @Override
+            public void onItemClick(int itemIndex, String itemName) {
+
+                switch (itemIndex){
+
+
+                    case 0 : FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
+                        break;
+                    case 1 : break;
+                    case 2 : break;
+                    case 3 : break;
+                    default:
+                }
+            }
+
+            @Override
+            public void onItemReselected(int itemIndex, String itemName) {
+
+            }
+        });
+    }
+
     private void initListener() {
 
+        binding.navigationItems.cancelImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.drawerLayout.closeDrawer(Gravity.LEFT);
+            }
+        });
 
     }
 }

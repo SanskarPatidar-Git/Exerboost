@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.add_new_address;
+package com.arbutus.exerboost.activity.address.add_new_address;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -27,7 +27,7 @@ public class AddNewAddressRepository {
 
     public void addNewAddress(AddNewAddressModel model){
 
-        Call<ResponseBody> call = ApiController.getInstance().getApiSets().addNewAddress(model);
+        Call<ResponseBody> call = null; //= ApiController.getInstance().getApiSets().addNewAddress(model);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

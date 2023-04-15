@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.arbutus.exerboost.R;
-import com.arbutus.exerboost.activity.add_new_address.AddNewAddressActivity;
+import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressActivity;
 import com.arbutus.exerboost.databinding.ActivitySelectAddressBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.shuhart.stepview.StepView;

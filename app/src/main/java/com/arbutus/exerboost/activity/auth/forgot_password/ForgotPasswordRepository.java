@@ -13,6 +13,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ForgotPasswordRepository {
+
     private MutableLiveData<String> failureResponseMutableData = new MutableLiveData<>();
     private MutableLiveData<Data> successResponseMutableData = new MutableLiveData<>();
 
@@ -23,6 +24,7 @@ public class ForgotPasswordRepository {
     public LiveData<Data> getSuccessResponseMutableData() {
         return successResponseMutableData;
     }
+
     public void forgotPassUserToServer(ForgotPasswordModel forgotPasswordModel) {
 
         Call<ForgotPasswordResponse> call = ApiController.getInstance().getApiSets().forgotPasswordUser(forgotPasswordModel);

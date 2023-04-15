@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rootLayoutOfAddNewAddress"
-    tools:context=".activity.add_new_address.AddNewAddressActivity">
+    tools:context=".activity.address.add_new_address.AddNewAddressActivity">
 
     <include
         android:id="@+id/header"
