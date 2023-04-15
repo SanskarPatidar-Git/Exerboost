@@ -120,38 +120,12 @@
             android:layout_height="wrap_content"
             android:text="Terms &amp; Policy"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/dmsans_medium"
+            android:fontFamily="@font/dmsans_regular"
             android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/confirmPasswordInputLayout" />
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/sign_in_with_google"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:background="@drawable/button_bg"
-            android:backgroundTint="@color/white"
-            android:orientation="horizontal"
-            app:cardCornerRadius="@dimen/_6sdp"
-            app:cardElevation="@dimen/_2sdp"
-            app:layout_constraintBottom_toTopOf="@id/createAccountButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/termsAndConditionCheckBox">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_google"
-                android:drawablePadding="@dimen/_10sdp"
-                android:fontFamily="@font/dmsans_regular"
-                android:layout_gravity="center"
-                android:text="@string/registeractivity_sign_in_with_google"
-                android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_13sdp" />
-        </com.google.android.material.card.MaterialCardView>
 
 
 
@@ -172,7 +146,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/sign_in_with_google"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionCheckBox"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
