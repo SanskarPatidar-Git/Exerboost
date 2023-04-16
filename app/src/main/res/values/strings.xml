@@ -12,7 +12,7 @@
     <string name="loginactivity_good_to_see_you_again_enter_your_details_below_to_continue_ordering">Good,to see you again, enter your details below to continue ordering.</string>
     <string name="loginactivity_create_an_account">Create an account</string>
     <string name="loginactivity_login">Login to my account</string>
-    <string name="loginactivity_sign_in_with_google"><u>Sign in with Google</u></string>
+    <string name="loginactivity_sign_in_with_google">Sign in with Google</string>
 
     //forgotpassactivity
     <string name="forgotpassactivity_cancel">Cancel</string>

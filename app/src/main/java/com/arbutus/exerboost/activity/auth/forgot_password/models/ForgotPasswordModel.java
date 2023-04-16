@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.auth.forgot_password;
+package com.arbutus.exerboost.activity.auth.forgot_password.models;
 
 import com.google.gson.annotations.SerializedName;
 

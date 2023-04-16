@@ -114,7 +114,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
         AppBoilerPlateCode.navigateToActivity(LoginActivity.this, ForgotPasswordActivity.class,null);
     }
 });
-        binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

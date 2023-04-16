@@ -18,59 +18,57 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".NewPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.payment_show.PaymentShowActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.auth.reset_password.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.order_placed.OrderPlacedActivity"
-            android:exported="false"/>
-<!--            <meta-data-->
-<!--                android:name="android.app.lib_name"-->
-<!--                android:value="" />-->
+            android:exported="false" /> <!-- <meta-data -->
+        <!-- android:name="android.app.lib_name" -->
+        <!-- android:value="" /> -->
         <activity
             android:name=".activity.new_order.NewOrderActivity"
             android:exported="false" />
         <activity
             android:name=".activity.payment.card.AddNewCardActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.payment.AddPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.add_new_address.AddNewAddressActivity"
-            android:exported="false">
-
-        </activity>
+            android:name=".activity.address.add_new_address.AddNewAddressActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".activity.select_address.SelectAddressActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".activity.auth.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activity.auth.forgot_password.ForgotPasswordActivity"
             android:exported="false" />
-
-
-
         <activity
             android:name=".activity.auth.login.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.intro.IntroActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

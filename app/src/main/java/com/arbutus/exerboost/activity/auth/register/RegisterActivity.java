@@ -34,17 +34,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void initListeners() {
 
-        binding.skipTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AppBoilerPlateCode.navigateToActivity(RegisterActivity.this, LoginActivity.class,null);
-            }
-        });
+//        binding.skipTextView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AppBoilerPlateCode.navigateToActivity(RegisterActivity.this, LoginActivity.class,null);
+//            }
+//        });
 
         binding.loginTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppBoilerPlateCode.navigateToActivity(RegisterActivity.this, LoginActivity.class,null);
+                onBackPressed();
             }
         });
         binding.emailEditText.addTextChangedListener(new TextWatcher() {

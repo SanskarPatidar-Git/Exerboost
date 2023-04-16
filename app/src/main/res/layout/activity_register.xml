@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,41 +7,48 @@
     android:id="@+id/rootLayoutOfRegister"
     tools:context=".activity.auth.register.RegisterActivity">
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/skipTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_medium"
-            android:text="@string/registeractivity_skip"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintTop_toTopOf="@id/guideline_top" />
+<!--        <TextView-->
+<!--            android:id="@+id/skipTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="@string/registeractivity_skip"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="@dimen/_16ssp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guideline_right"-->
+<!--            app:layout_constraintTop_toTopOf="@id/guideline_top" />-->
 
         <TextView
             android:id="@+id/create_an_account_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/dmsans_bold"
             android:text="@string/registeractivity_create_an_account"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/_24ssp"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/skipTextView" />
+            app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
         <TextView
             android:id="@+id/welcomeFriendTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:fontFamily="@font/dmsans_regular"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/dmsans_medium"
             android:text="@string/registeractivity_Welcome_friend"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/create_an_account_textview" />
@@ -52,7 +58,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:hint="@string/registeractivity_enter_email"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/welcomeFriendTextView"
@@ -75,7 +81,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="@string/registeractivity_enter_password"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
@@ -97,7 +103,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="Confirm Password"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/emailAddressInputLayout"
@@ -118,48 +124,41 @@
             android:id="@+id/termsAndConditionCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terms &amp; Policy"
+            android:text="Accept Terms &amp; Policy"
             android:textSize="@dimen/_14ssp"
             android:fontFamily="@font/dmsans_regular"
             android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/confirmPasswordInputLayout" />
 
-
-
-
-
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createAccountButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/_46sdp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_30sdp"
             android:background="@drawable/gradient_app_color"
             android:letterSpacing="0"
             android:text="@string/registeractivity_create_an_account"
             android:textAllCaps="false"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/dmsans_bold"
             app:backgroundTint="@null"
-            app:layout_constraintBottom_toTopOf="@+id/loginTextView"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/termsAndConditionCheckBox"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionCheckBox" />
 
         <TextView
             android:id="@+id/loginTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/dmsans_medium"
             android:text="@string/registeractivity_login"
-            android:textAlignment="viewEnd"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountButton"
             app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left" />
@@ -183,14 +182,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/_16sdp" />
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
