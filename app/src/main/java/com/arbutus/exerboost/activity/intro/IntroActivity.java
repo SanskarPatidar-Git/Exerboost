@@ -48,14 +48,16 @@ public class IntroActivity extends AppCompatActivity {
         binding.skipTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this, RegisterActivity.class,null);
+               AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this, LoginActivity.class,null);
             }
         });
 
         binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this,RegisterActivity.class,null);
+                Bundle bundle = new Bundle();
+                bundle.putString("from","intro");
+                AppBoilerPlateCode.navigateToActivityWithFinish(IntroActivity.this,RegisterActivity.class,bundle);
             }
         });
         binding.loginTextView.setOnClickListener(new View.OnClickListener() {

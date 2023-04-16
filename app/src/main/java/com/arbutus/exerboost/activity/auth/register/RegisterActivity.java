@@ -209,4 +209,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null){
+            AppBoilerPlateCode.navigateToActivityWithFinish(RegisterActivity.this,LoginActivity.class,null);
+        } else
+           super.onBackPressed();
+    }
 }

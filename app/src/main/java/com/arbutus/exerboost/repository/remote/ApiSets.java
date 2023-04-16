@@ -5,6 +5,7 @@ import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressModel
 import com.arbutus.exerboost.activity.auth.forgot_password.models.ForgotPasswordModel;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
 import com.arbutus.exerboost.activity.auth.login.model.response.LoginResponse;
+import com.arbutus.exerboost.activity.auth.new_password.model.NewPasswordModel;
 import com.arbutus.exerboost.activity.auth.register.models.request.RegisterModel;
 import com.arbutus.exerboost.activity.auth.register.models.response.RegisterResponse;
 import com.arbutus.exerboost.activity.auth.reset_password.model.ResetPasswordModel;
@@ -37,6 +38,9 @@ public interface ApiSets {
 
     @POST("app/auth/verify-otp")
     Call<ResponseBody> verifyOtp(@Body ResetPasswordModel model , @Header("Authorization") String authToken);
+
+    @POST("app/auth/update-password")
+    Call<ResponseBody> updatePassword(@Body NewPasswordModel model , @Header("Authorization") String authToken);
 
 
     // ==================== ADDRESS ==============================

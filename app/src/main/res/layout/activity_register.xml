@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+            app:layout_constraintGuide_end="552dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"

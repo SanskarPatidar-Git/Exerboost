@@ -18,7 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".NewPasswordActivity"
+            android:name=".activity.auth.new_password.NewPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.payment_show.PaymentShowActivity"
