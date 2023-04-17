@@ -47,5 +47,6 @@
 
     <string name="open_navigation_drawer">Open drawer</string>
     <string name="close_navigation_drawer">Close drawer</string>
+    <string name="order_again"><u>Order Again</u></string>
 
 </resources>
