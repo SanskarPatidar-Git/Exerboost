@@ -44,7 +44,7 @@
             android:name=".activity.address.add_new_address.AddNewAddressActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".activity.select_address.SelectAddressActivity"
+            android:name=".activity.continue_new_order.activity.ContinueNewOrderActivity"
             android:exported="false"></activity>
         <activity
             android:name=".activity.auth.register.RegisterActivity"

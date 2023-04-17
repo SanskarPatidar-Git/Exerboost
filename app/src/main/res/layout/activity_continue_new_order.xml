@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.select_address.SelectAddressActivity">
+    tools:context=".activity.continue_new_order.activity.ContinueNewOrderActivity">
 
     <include
         android:id="@+id/header"
@@ -12,6 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <com.shuhart.stepview.StepView
         android:id="@+id/step_view"
         android:layout_width="match_parent"
@@ -36,47 +37,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"/>
-    <androidx.core.widget.NestedScrollView
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step_view"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/addressRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8sdp"
-                tools:listitem="@layout/listitem_select_address"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/addNewAddressTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_add"
-                android:drawablePadding="@dimen/_4sdp"
-                android:text="Add New Address"
-                android:layout_margin="@dimen/_8sdp"
-                android:textColor="#F0821D"
-                android:fontFamily="@font/dmsans_medium"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addressRecyclerView"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
@@ -89,7 +61,7 @@
         android:text="Next"
         android:fontFamily="@font/dmsans_bold"
         android:textAllCaps="false"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_14ssp"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

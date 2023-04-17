@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.main.fragments.home;
+package com.arbutus.exerboost.activity.main.fragments.home.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

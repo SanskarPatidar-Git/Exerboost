@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.select_address;
+package com.arbutus.exerboost.activity.continue_new_order.activity;
 
 import android.content.Context;
 import android.view.View;
