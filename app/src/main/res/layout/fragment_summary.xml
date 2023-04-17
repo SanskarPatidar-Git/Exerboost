@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.continue_new_order.fragments.summary.SummaryFragment">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -10,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_100sdp"
         app:cardCornerRadius="@dimen/_20sdp"
-        app:cardElevation="@dimen/_4sdp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/guideline_top">
@@ -99,6 +100,7 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
@@ -107,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/dmsans_medium"
-        android:text="1. Address"
+        android:text="Address"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
@@ -122,43 +124,42 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/addressInSummaryTextView"
-        android:layout_margin="@dimen/_8sdp"
-        app:cardCornerRadius="@dimen/_8sdp"
-        app:cardElevation="@dimen/_4sdp">
+        android:layout_marginTop="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_6sdp">
-
-        <TextView
-            android:id="@+id/addressTextView"
-            android:layout_width="0sp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/dmsans_medium"
-            android:text="Marimata square , indore"
-            android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:padding="@dimen/_6sdp">
 
-        <TextView
-            android:id="@+id/changeAddressTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:fontFamily="@font/dmsans_medium"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:text="Change"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="Marimata square , indore"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/changeAddressTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/dmsans_medium"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Change"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -169,7 +170,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/dmsans_medium"
-        android:text="2. Payment"
+        android:text="Payment"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
@@ -177,12 +178,11 @@
         app:layout_constraintTop_toBottomOf="@+id/addressCardView" />
 
     <androidx.cardview.widget.CardView
-        android:id="@id/paymentCardView"
+        android:id="@+id/paymentCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         app:cardCornerRadius="@dimen/_8sdp"
-        app:cardElevation="@dimen/_4sdp"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/paymentTextView">
@@ -199,7 +199,6 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
                 android:src="@drawable/visa_image" />
 
             <TextView
@@ -211,7 +210,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_14ssp"
                 android:layout_marginLeft="@dimen/_10sdp"
-             app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/visaImageView" />
 
             <TextView
@@ -242,50 +241,33 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/payNowButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_16sdp"
-        android:background="@drawable/gradient_app_color"
-        android:letterSpacing="0"
-        android:text="Pay Now"
-        android:textAllCaps="false"
-        android:textSize="@dimen/_12ssp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right"
-        app:layout_constraintHorizontal_bias="0.50"
-        app:layout_constraintStart_toEndOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/paymentCardView"
-        app:layout_constraintVertical_bias="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/_16sdp" />
+        app:layout_constraintGuide_begin="@dimen/_8sdp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/_20sdp" />
+        app:layout_constraintGuide_end="@dimen/_8sdp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/_16sdp" />
+        app:layout_constraintGuide_begin="@dimen/_8sdp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/_16sdp" />
+        app:layout_constraintGuide_end="@dimen/_8sdp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import com.arbutus.exerboost.activity.auth.reset_password.model.ResetPasswordMod
 import com.arbutus.exerboost.activity.auth.social.SocialSignInModel;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.model.AddressModel;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
+import com.arbutus.exerboost.activity.new_order.NewOrderModel;
 import com.arbutus.exerboost.repository.BaseResponseModel;
 
 import org.json.JSONObject;
@@ -56,7 +57,14 @@ public interface ApiSets {
     @GET("app/user/get-residential-address")
     Call<BaseResponseModelList<AddressModel>> getAddress(@Header("Authorization") String authToken);
 
+    @POST("app/user/create-residential-address")
+    Call<ResponseBody> addAddress(@Body AddNewAddressModel model , @Header("Authorization") String authToken);
+
+
     //======================= HOME FRAGMENT ===========================
     @POST("app/product/get-products")
     Call<BaseResponseModelList<Data>> getAllProducts(@Header("Authorization") String authToken);
+
+    @POST("app/order/create-order")
+    Call<ResponseBody> createOrder(@Body NewOrderModel model , @Header("Authorization") String authToken);
 }

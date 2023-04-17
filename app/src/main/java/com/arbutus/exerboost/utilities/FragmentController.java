@@ -24,4 +24,11 @@ public class FragmentController {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public static void replaceFragmentWithBackStack(FragmentManager manager , int container , Fragment fragment){
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }

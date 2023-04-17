@@ -27,6 +27,7 @@ public class AppBoilerPlateCode {
 
     public static void navigateToActivity(Context context , Class nextActivity , Bundle bundle){
         Intent intent = new Intent(context,nextActivity);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         if(bundle != null)
             intent.putExtras(bundle);
         context.startActivity(intent);

@@ -1,14 +1,28 @@
 package com.arbutus.exerboost.activity.address.add_new_address;
 
+import com.google.gson.annotations.SerializedName;
+
 public class AddNewAddressModel {
 
-
+    @SerializedName("street1")
     private String streetOne;
+
+    @SerializedName("street2")
     private String streetTwo ;
-    private   String city;
+
+    @SerializedName("city")
+    private  String city;
+
+    @SerializedName("state")
     private  String state;
+
+    @SerializedName("country")
     private String country;
+
+    @SerializedName("postcode")
     private String postCode ;
+
+    @SerializedName("addresstype")
     private String addressType;
 
     private boolean isDefaultAddress;

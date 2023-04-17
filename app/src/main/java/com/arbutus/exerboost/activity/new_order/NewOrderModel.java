@@ -22,6 +22,8 @@ public class NewOrderModel implements Parcelable {
     @SerializedName("type")
     private String type;
 
+    private String streetAddress;
+
     public NewOrderModel(String product, String deliveryAddress, String goal, String duration, String type) {
         this.product = product;
         this.deliveryAddress = deliveryAddress;
@@ -70,6 +72,14 @@ public class NewOrderModel implements Parcelable {
         this.type = type;
     }
 
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
 
     @Override
     public int describeContents() {
@@ -83,6 +93,7 @@ public class NewOrderModel implements Parcelable {
         dest.writeString(this.goal);
         dest.writeString(this.duration);
         dest.writeString(this.type);
+        dest.writeString(this.streetAddress);
     }
 
     public void readFromParcel(Parcel source) {
@@ -91,6 +102,7 @@ public class NewOrderModel implements Parcelable {
         this.goal = source.readString();
         this.duration = source.readString();
         this.type = source.readString();
+        this.streetAddress = source.readString();
     }
 
     protected NewOrderModel(Parcel in) {
@@ -99,6 +111,7 @@ public class NewOrderModel implements Parcelable {
         this.goal = in.readString();
         this.duration = in.readString();
         this.type = in.readString();
+        this.streetAddress = in.readString();
     }
 
     public static final Parcelable.Creator<NewOrderModel> CREATOR = new Parcelable.Creator<NewOrderModel>() {
@@ -112,4 +125,16 @@ public class NewOrderModel implements Parcelable {
             return new NewOrderModel[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "NewOrderModel{" +
+                "product='" + product + '\'' +
+                ", deliveryAddress='" + deliveryAddress + '\'' +
+                ", goal='" + goal + '\'' +
+                ", duration='" + duration + '\'' +
+                ", type='" + type + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                '}';
+    }
 }

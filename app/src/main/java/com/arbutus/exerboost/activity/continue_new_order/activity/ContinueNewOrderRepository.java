@@ -1,9 +1,10 @@
-package com.arbutus.exerboost.activity.address.add_new_address;
+package com.arbutus.exerboost.activity.continue_new_order.activity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.arbutus.exerboost.activity.MyBaseApplication;
+import com.arbutus.exerboost.activity.new_order.NewOrderModel;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.repository.remote.ApiController;
@@ -15,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddNewAddressRepository {
+public class ContinueNewOrderRepository {
 
     private MutableLiveData<String> failureResponseMutableData = new MutableLiveData<>();
     private MutableLiveData<String> successResponseMutableData = new MutableLiveData<>();
@@ -28,11 +29,11 @@ public class AddNewAddressRepository {
         return successResponseMutableData;
     }
 
-    public void addNewAddress(AddNewAddressModel model){
+    public void createOrderToServer(NewOrderModel model){
 
         String authToken = LocalSets.getAuthToken(LocalController.getInstance(MyBaseApplication.getContext()).getPreferences());
 
-        Call<ResponseBody> call  = ApiController.getInstance().getApiSets().addAddress(model,authToken);
+        Call<ResponseBody> call  = ApiController.getInstance().getApiSets().createOrder(model,authToken);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -65,4 +66,5 @@ public class AddNewAddressRepository {
             }
         });
     }
+
 }

@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class AddressModel {
 
+    @SerializedName("_id")
+    private String addressId;
+
     @SerializedName("street1")
     private String street1Address;
 
@@ -22,10 +25,12 @@ public class AddressModel {
     @SerializedName("postcode")
     private String postCode;
 
-    @SerializedName("addressType")
+    @SerializedName("addresstype")
     private String addressType;
 
-    public AddressModel(String street1Address, String street2Address, String city, String state, String country, String postCode, String addressType) {
+
+    public AddressModel(String addressId, String street1Address, String street2Address, String city, String state, String country, String postCode, String addressType) {
+        this.addressId = addressId;
         this.street1Address = street1Address;
         this.street2Address = street2Address;
         this.city = city;
@@ -33,6 +38,14 @@ public class AddressModel {
         this.country = country;
         this.postCode = postCode;
         this.addressType = addressType;
+    }
+
+    public String getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(String addressId) {
+        this.addressId = addressId;
     }
 
     public String getStreet1Address() {
@@ -90,4 +103,5 @@ public class AddressModel {
     public void setAddressType(String addressType) {
         this.addressType = addressType;
     }
+
 }

@@ -32,7 +32,6 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
             android:hint="Street 1"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
@@ -56,7 +55,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="Street 2"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
@@ -78,7 +77,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="City"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
@@ -100,7 +99,7 @@
             style="@style/TextInputLayout"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="State"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/cityInputLayout">
@@ -122,11 +121,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_20sdp"
             android:hint="Country"
+            app:layout_constraintBottom_toBottomOf="@+id/stateInputLayout"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toEndOf="@id/stateInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/cityInputLayout">
+            app:layout_constraintTop_toTopOf="@+id/stateInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/countryEditText"
@@ -143,7 +142,7 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:hint="Post Code"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -165,7 +164,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_50sdp"
             android:background="@drawable/input_bg"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toEndOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/postCodeInputLayout">
@@ -192,6 +191,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:text=" Set as Default Address"
+            android:fontFamily="@font/dmsans_medium"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
@@ -203,7 +203,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"
@@ -240,7 +240,8 @@
         android:letterSpacing="0"
         android:text="Save"
         android:textAllCaps="false"
-        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/dmsans_bold"
+        android:textSize="@dimen/_14ssp"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

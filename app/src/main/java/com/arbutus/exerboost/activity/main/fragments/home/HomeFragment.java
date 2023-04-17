@@ -1,5 +1,6 @@
 package com.arbutus.exerboost.activity.main.fragments.home;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.arbutus.exerboost.activity.main.fragments.home.adapters.AllProductAda
 import com.arbutus.exerboost.activity.main.fragments.home.adapters.AutoImageSlideAdapter;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
 import com.arbutus.exerboost.databinding.FragmentHomeBinding;
+import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private HomeFragmentViewModel homeFragmentViewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,6 +51,8 @@ public class HomeFragment extends Fragment {
 
     private void getAllProductsFromViewModel() {
 
+        Dialog progressDialog = AppBoilerPlateCode.setProgressDialog(getContext());
+
         homeFragmentViewModel.getAllProductsFromRepository();
 
         LiveData<List<Data>> dataLiveDataList = homeFragmentViewModel.observeSuccessData();
@@ -55,6 +60,7 @@ public class HomeFragment extends Fragment {
         dataLiveDataList.observe(getViewLifecycleOwner(), new Observer<List<Data>>() {
             @Override
             public void onChanged(List<Data> data) {
+                progressDialog.dismiss();
                 setProductAdapter(data);
             }
         });
@@ -63,6 +69,7 @@ public class HomeFragment extends Fragment {
         stringLiveData.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
+                progressDialog.dismiss();
                 Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 System.out.println("============= Error =================== "+s);
             }

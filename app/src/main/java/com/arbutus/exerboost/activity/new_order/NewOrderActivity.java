@@ -41,9 +41,9 @@ public class NewOrderActivity extends AppCompatActivity {
         String goal = newOrderViewModel.getGoal();
         if(!Validation.isStringEmpty(goal)){
 
-          if(goal.equals("stay_healthy")){
+          if(goal.equals("Stay Healthy")){
               binding.stayHealthyCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
-          } else if(goal.equals("lost_fat")){
+          } else if(goal.equals("Lost Fat")){
               binding.lostFatCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
           } else {
               binding.ketoDietCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
@@ -91,7 +91,7 @@ public class NewOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                newOrderViewModel.setGoal("stay_healthy");
+                newOrderViewModel.setGoal("Stay Healthy");
                 binding.stayHealthyCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
                 binding.lostFatCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
                 binding.ketoDietCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
@@ -102,7 +102,7 @@ public class NewOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                newOrderViewModel.setGoal("lost_fat");
+                newOrderViewModel.setGoal("Lost Fat");
                 binding.stayHealthyCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
                 binding.lostFatCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
                 binding.ketoDietCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
@@ -113,7 +113,7 @@ public class NewOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                newOrderViewModel.setGoal("keto_diet");
+                newOrderViewModel.setGoal("Keto Diet");
                 binding.stayHealthyCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
                 binding.lostFatCardView.setBackgroundResource(R.drawable.unselected_item_background_drawable);
                 binding.ketoDietCardView.setBackgroundResource(R.drawable.selected_item_background_drawable);
@@ -174,6 +174,7 @@ public class NewOrderActivity extends AppCompatActivity {
 
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("order_data",newOrderModel);
+                    System.out.println( "===================== "+newOrderModel.toString());
                     AppBoilerPlateCode.navigateToActivity(NewOrderActivity.this, ContinueNewOrderActivity.class, bundle);
                 }
             }

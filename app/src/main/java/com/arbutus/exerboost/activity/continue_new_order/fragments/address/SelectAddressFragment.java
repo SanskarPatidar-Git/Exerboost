@@ -16,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.arbutus.exerboost.BlankFragment;
 import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressActivity;
+import com.arbutus.exerboost.activity.continue_new_order.SelectedAddressListener;
+import com.arbutus.exerboost.activity.continue_new_order.activity.ContinueNewOrderActivity;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.adapter.SelectAddressAdapter;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.model.AddressModel;
 import com.arbutus.exerboost.databinding.FragmentSelectAddressBinding;
@@ -33,6 +36,16 @@ public class SelectAddressFragment extends Fragment {
 
     private Dialog progressDialog;
 
+    private SelectedAddressListener listener;
+
+    public static SelectAddressFragment newInstance() {
+        SelectAddressFragment fragment = new SelectAddressFragment();
+        return fragment;
+    }
+
+    public void initSelectAddressListener(SelectedAddressListener listener){
+        this.listener = listener;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +61,6 @@ public class SelectAddressFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.addressRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        getAddressFromServer();
         initListener();
     }
 
@@ -76,8 +88,7 @@ public class SelectAddressFragment extends Fragment {
 
                 if(addressModels.size()>0){
                     binding.noAddressFoundTextView.setVisibility(View.GONE);
-                    SelectAddressAdapter adapter = new SelectAddressAdapter(getContext(),addressModels);
-                    binding.addressRecyclerView.setAdapter(adapter);
+                    setAdapter(addressModels);
                 } else {
                    binding.noAddressFoundTextView.setVisibility(View.VISIBLE);
                 }
@@ -94,5 +105,28 @@ public class SelectAddressFragment extends Fragment {
                 System.out.println("======== NO ADDRESS FOUND ==============");
             }
         });
+    }
+
+    private void setAdapter(List<AddressModel> addressModels){
+
+        SelectAddressAdapter adapter = new SelectAddressAdapter(getContext(),addressModels);
+        adapter.initListener(new SelectAddressRadioButtonListener() {
+            @Override
+            public void onClickRadioButton(int position) {
+               listener.onClickAddress(addressModels.get(position).getAddressId() , addressModels.get(position).getStreet1Address());
+            }
+
+            @Override
+            public void onClickMore(int position) {
+
+            }
+        });
+        binding.addressRecyclerView.setAdapter(adapter);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((ContinueNewOrderActivity)getActivity()).setHeaderTitle("Select Address");
+        getAddressFromServer();
     }
 }
