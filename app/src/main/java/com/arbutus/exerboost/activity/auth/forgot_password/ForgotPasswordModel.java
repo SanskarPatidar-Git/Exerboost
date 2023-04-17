@@ -1,9 +1,6 @@
 package com.arbutus.exerboost.activity.auth.forgot_password;
-
 import com.google.gson.annotations.SerializedName;
-
 public class ForgotPasswordModel {
-
     @SerializedName("email")
     private String email;
 

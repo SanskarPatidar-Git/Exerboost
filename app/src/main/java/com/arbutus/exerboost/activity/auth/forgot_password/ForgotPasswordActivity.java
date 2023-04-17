@@ -30,21 +30,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         binding.sendEmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 String email = binding.emailAddressEditText.getText().toString().trim();
-
                 if (binding.emailAddressInputLayout.isErrorEnabled()) {
                     binding.emailAddressEditText.requestFocus();
-
                 } else if (Validation.isStringEmpty(email)) {
-                    binding.emailAddressInputLayout.setError("Enter email");
+                    binding.emailAddressInputLayout.setError("Enter email Address");
                     binding.emailAddressEditText.requestFocus();
-
                 } else {
-
                     if (AppBoilerPlateCode.isInternetConnected(ForgotPasswordActivity.this)) {
-
                         progressDialog = AppBoilerPlateCode.setProgressDialog(ForgotPasswordActivity.this);
                         ForgotPasswordModel forgotPasswordModel = new ForgotPasswordModel(email);
                         forgotPasswordUser(forgotPasswordModel);

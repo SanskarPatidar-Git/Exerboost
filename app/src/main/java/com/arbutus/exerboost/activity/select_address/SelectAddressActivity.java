@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressActivity;
@@ -15,9 +16,10 @@ import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SelectAddressActivity extends AppCompatActivity {
-
+    private int currentStep = 0;
     private ActivitySelectAddressBinding binding;
 
     @Override
@@ -54,6 +56,41 @@ public class SelectAddressActivity extends AppCompatActivity {
                 .typeface(ResourcesCompat.getFont(this, R.font.dmsans_medium))
                 // other state methods are equal to the corresponding xml attributes
                 .commit();
+        binding.stepView.setOnStepClickListener(new StepView.OnStepClickListener() {
+            @Override
+            public void onStepClick(int step) {
+                Toast.makeText(SelectAddressActivity.this, "Step " + step, Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentStep < binding.stepView.getStepCount() - 1) {
+                    currentStep++;
+                    binding.stepView.go(currentStep, true);
+                } else {
+                    binding.stepView.done(true);
+                }
+            }
+        });
+//        binding.backButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (currentStep > 0) {
+//                    currentStep--;
+//                }
+//               binding.stepView.done(false);
+//                binding.stepView.go(currentStep, true);
+//            }
+//        });
+        List<String> steps = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            steps.add("Step " + (i + 1));
+        }
+        steps.set(steps.size() - 1, steps.get(steps.size() - 1) + " last one");
+        binding.stepView.setSteps(steps);
+
+
     }
 
     private void setAdapterForAddress() {

@@ -22,7 +22,15 @@
             android:exported="false" />
         <activity
             android:name=".activity.order_placed.OrderPlacedActivity"
-            android:exported="false"/>
+            android:exported="true">
+
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 <!--            <meta-data-->
 <!--                android:name="android.app.lib_name"-->
 <!--                android:value="" />-->
@@ -36,7 +44,7 @@
             android:name=".activity.payment.AddPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.add_new_address.AddNewAddressActivity"
+            android:name=".activity.address.add_new_address.AddNewAddressActivity"
             android:exported="false">
 
         </activity>
@@ -65,12 +73,8 @@
             android:exported="false"/>
         <activity
             android:name=".activity.SplashActivity"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
     </application>
 

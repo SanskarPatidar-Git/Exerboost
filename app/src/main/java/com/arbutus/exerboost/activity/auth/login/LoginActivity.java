@@ -31,7 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     public Dialog progressDialog;
     private GoogleSignIn googleSignIn;
 
-    private LoginRepository repository  = new LoginRepository();
+    private LoginRepository repository = new LoginRepository();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               AppBoilerPlateCode.navigateToActivity(LoginActivity.this, RegisterActivity.class,null);
+                AppBoilerPlateCode.navigateToActivity(LoginActivity.this, RegisterActivity.class, null);
             }
         });
 
@@ -62,11 +63,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 int isValid = Validation.isValidEmail(charSequence.toString());
 
-                if (isValid==1) {
+                if (isValid == 1) {
                     binding.emailAddressInputLayout.setError("Enter email");
-                } else if(isValid==2) {
+                } else if (isValid == 2) {
                     binding.emailAddressInputLayout.setError("Invalid email format");
-                } else if(isValid==0){
+                } else if (isValid == 0) {
                     AppBoilerPlateCode.setInputLayoutErrorDisable(binding.emailAddressInputLayout);
                 }
             }
@@ -104,16 +105,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 System.out.println("============");
-                googleSignIn = new GoogleSignIn(LoginActivity.this,repository);
+                googleSignIn = new GoogleSignIn(LoginActivity.this, repository);
                 googleSignIn.signIn();
             }
         });
-binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        AppBoilerPlateCode.navigateToActivity(LoginActivity.this, ForgotPasswordActivity.class,null);
-    }
-});
+        binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivity(LoginActivity.this, ForgotPasswordActivity.class, null);
+            }
+        });
         binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +125,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
                 if (binding.emailAddressInputLayout.isErrorEnabled()) {
                     binding.emailEditText.requestFocus();
 
-                }else if (Validation.isStringEmpty(email)) {
+                } else if (Validation.isStringEmpty(email)) {
                     binding.emailAddressInputLayout.setError("Enter email");
                     binding.emailEditText.requestFocus();
 
@@ -134,26 +135,25 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
 
                 } else {
 
-                     if(AppBoilerPlateCode.isInternetConnected(LoginActivity.this)){
+                    if (AppBoilerPlateCode.isInternetConnected(LoginActivity.this)) {
 
-                         progressDialog = AppBoilerPlateCode.setProgressDialog(LoginActivity.this);
-                         LoginModel loginModel = new LoginModel(email,password);
-                         loginUser(loginModel);
-                     }
-                     else {
-                         AppBoilerPlateCode.showSnackBarForInternet(LoginActivity.this,binding.rootLayoutOfLogin);
-                     }
+                        progressDialog = AppBoilerPlateCode.setProgressDialog(LoginActivity.this);
+                        LoginModel loginModel = new LoginModel(email, password);
+                        loginUser(loginModel);
+                    } else {
+                        AppBoilerPlateCode.showSnackBarForInternet(LoginActivity.this, binding.rootLayoutOfLogin);
+                    }
                 }
             }
         });
     }
 
-    private void loginUser(LoginModel loginModel){
+    private void loginUser(LoginModel loginModel) {
         //todo login user
         repository.loginUserToServer(loginModel);
     }
 
-    private void observeResponse(){
+    private void observeResponse() {
 
         LiveData<String> failureResponseLiveData = repository.getFailureResponseMutableData();
         LiveData<Data> successResponseLiveData = repository.getSuccessResponseMutableData();
@@ -163,7 +163,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
             public void onChanged(String s) {
                 progressDialog.dismiss();
                 Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
-                System.out.println("FAILURE ++++++++++++++++++ "+s);
+                System.out.println("FAILURE ++++++++++++++++++ " + s);
             }
         });
 
@@ -175,7 +175,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
                 System.out.println("SUCCESS ++++++++++++++++++ ");
                 repository.setUserDataToLocal(LoginActivity.this);
 
-                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class,null);
+                AppBoilerPlateCode.navigateToActivityWithFinish(LoginActivity.this, MainActivity.class, null);
             }
         });
     }
@@ -183,7 +183,7 @@ binding.forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        System.out.println("========== activity result ============"+resultCode+"      "+requestCode);
-        googleSignIn.activityResult(requestCode,resultCode,data, Activity.RESULT_OK);
+        System.out.println("========== activity result ============" + resultCode + "      " + requestCode);
+        googleSignIn.activityResult(requestCode, resultCode, data, Activity.RESULT_OK);
     }
 }
