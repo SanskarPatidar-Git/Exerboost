@@ -52,6 +52,9 @@
         <activity
             android:name=".activity.auth.forgot_password.ForgotPasswordActivity"
             android:exported="false" />
+
+
+
         <activity
             android:name=".activity.auth.login.LoginActivity"
             android:exported="false" />
