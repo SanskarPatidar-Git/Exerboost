@@ -5,8 +5,7 @@
     android:layout_height="@dimen/_70sdp"
     android:layout_margin="@dimen/_8sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/_8sdp"
-    app:cardElevation="@dimen/_4sdp">
+    app:cardCornerRadius="@dimen/_8sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,10 +17,9 @@
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            android:text=""
+            android:elevation="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <ImageView
             android:id="@+id/moreImageVew"
