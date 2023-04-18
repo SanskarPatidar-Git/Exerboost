@@ -5,15 +5,15 @@
         android:width="@dimen/_1sdp"
         android:color="@color/blue_50" />
 
-    <corners android:radius="190dp"/>
+    <corners android:radius="190dp" />
 
-    <solid android:color="@color/blue_50"/>
+    <solid android:color="@color/blue_50" />
 
     <padding
         android:left="8dp"
         android:top="8dp"
         android:right="8dp"
-        android:bottom="8dp" >
+        android:bottom="8dp">
 
     </padding>
 </shape>

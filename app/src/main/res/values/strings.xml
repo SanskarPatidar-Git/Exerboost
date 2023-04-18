@@ -48,5 +48,13 @@
     <string name="open_navigation_drawer">Open drawer</string>
     <string name="close_navigation_drawer">Close drawer</string>
     <string name="order_again"><u>Order Again</u></string>
+    <string name="title_home">Home</string>
+    <string name="title_favourite">Orders</string>
+    <string name="title_favorite">Favourite</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_notifications">Notification</string>
+    <string name="title_profile">Profile</string>
+    <string name="empty_value">Empty Value</string>
+    <string name="count">Count</string>
 
 </resources>

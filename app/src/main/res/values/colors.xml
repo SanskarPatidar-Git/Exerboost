@@ -6,13 +6,13 @@
     <color name="colorSecondary">#1C1C1C</color>
     <color name="defaultColor">#AAACAE</color>
     <color name="selectcolor">#818181</color>
-<color name="greycolor">#E8E8E8</color>
+    <color name="greycolor">#E8E8E8</color>
     <color name="sitandrelaxcolor">#3D3D3D</color>
     <color name="cardViewBackgroundcolor">#F9F5DC</color>
     <color name="cardviewBordercolor">#EBD132</color>
     <color name="textcolorGreen">#3EC032</color>
     <color name="neworder_headline_color">#3C3615</color>
-<color name="redtomato">#FE554A</color>
+    <color name="redtomato">#FE554A</color>
     <color name="grey">#E8E8E8</color>
 
     <color name="pin_view_text_hint_default">#FFFFFF</color>

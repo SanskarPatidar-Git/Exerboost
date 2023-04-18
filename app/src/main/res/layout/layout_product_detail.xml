@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/cardviewProductImage"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_gravity="start"
+        android:elevation="@dimen/_10sdp"
+        android:src="@drawable/product_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/productCardView"
+        app:layout_constraintBottom_toTopOf="@id/productCardView"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/orderNowButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_46sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/gradient_app_color"
+        android:letterSpacing="0"
+        android:text="Order Now"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12ssp"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productCardView"
+        app:layout_constraintBottom_toBottomOf="@id/productCardView"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/_4sdp"
+        android:elevation="1.1dp"
+        app:layout_constraintBottom_toBottomOf="@id/productCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardviewProductImage">
+
+        <TextView
+            android:id="@+id/headingProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/dmsans_regular"
+            android:gravity="center"
+            android:text="Combo Name 1"
+            android:textColor="@color/sitandrelaxcolor"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productCalorieTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/dmsans_italic"
+            android:gravity="center"
+            android:text="Kcal 228"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/headingProductName" />
+
+        <TextView
+            android:id="@+id/productPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Rs.1500"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/monthTextView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/dummyTextView" />
+
+        <TextView
+            android:id="@+id/monthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:gravity="center"
+            android:text="One Monthly"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/productPriceTextView"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@+id/productPriceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/dummyTextView"
+            app:layout_constraintTop_toTopOf="@+id/productPriceTextView" />
+
+        <TextView
+            android:id="@+id/dummyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/dmsans_regular"
+            android:gravity="center"
+            android:text="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specim not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            android:textColor="@color/sitandrelaxcolor"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@id/productPriceTextView"
+            app:layout_constraintBottom_toTopOf="@id/productPriceTextView"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/productCalorieTextView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/productCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_450sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:elevation="@dimen/_1sdp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="#EBD132"
+        app:cardBackgroundColor="#F9F5DC"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right_end"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@id/guideline_left_end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_10sdp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

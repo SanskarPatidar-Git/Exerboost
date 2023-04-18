@@ -27,5 +27,6 @@
 
     <style name="SpinnerTheme">
         <item name="android:textColor">@color/colorSecondary</item>
-        <item name="android:fontFamily">@font/dmsans_medium</item>      </style>
+        <item name="android:fontFamily">@font/dmsans_medium</item>
+    </style>
 </resources>

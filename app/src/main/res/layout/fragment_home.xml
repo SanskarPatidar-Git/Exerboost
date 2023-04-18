@@ -166,7 +166,7 @@
             android:src="@drawable/card_view_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/choicevegCardView"
-            app:layout_constraintTop_toTopOf="@+id/choicevegCardView"/>
+            app:layout_constraintTop_toTopOf="@+id/choicevegCardView" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -269,7 +269,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/selectYourPreferenceTextView"/>
+            app:layout_constraintTop_toBottomOf="@id/selectYourPreferenceTextView" />
 
 
         <TextView
@@ -282,7 +282,7 @@
             android:fontFamily="@font/dmsans_medium"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/cardviewImage"/>
+            app:layout_constraintTop_toBottomOf="@+id/cardviewImage" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewCategories"
@@ -295,7 +295,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toEndOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/categoriesTextView"
-            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"/>
+            app:layout_constraintBottom_toTopOf="@id/guideline_bottom" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_top"

@@ -3,6 +3,7 @@ package com.arbutus.exerboost.activity;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -12,6 +13,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arbutus.exerboost.R;
@@ -24,8 +26,10 @@ import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.arbutus.exerboost.utilities.FragmentController;
-import com.library.center.circle.bottomnavigationview.SpaceItem;
-import com.library.center.circle.bottomnavigationview.SpaceOnClickListener;
+
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,57 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
         setUpToolbar();
 
-        binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
-        setUpBottomNavigation();
+        //binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
+        //  setUpBottomNavigation();
 
 
-        FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
+        FragmentController.replaceFragment(fragmentManager, R.id.fragmentContainer, new HomeFragment());
         initListener();
-    }
-
-    private void setUpToolbar() {
-
-        setSupportActionBar(binding.header.toolbar);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerLayout,binding.header.toolbar,R.string.open_navigation_drawer,R.string.close_navigation_drawer);
-        binding.drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-    }
-
-    private void setUpBottomNavigation() {
-
-
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_home_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_more_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_buy_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.person_cartoon_img));
-
-        binding.spaceBottomNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
-            @Override
-            public void onCentreButtonClick() {
-
-            }
-
-            @Override
-            public void onItemClick(int itemIndex, String itemName) {
-
-                switch (itemIndex){
-
-
-                    case 0 : FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
-                        break;
-                    case 1 : break;
-                    case 2 : break;
-                    case 3 : break;
-                    default:
-                }
-            }
-
-            @Override
-            public void onItemReselected(int itemIndex, String itemName) {
-
-            }
-        });
 
 
         //========================= NAVIGATION DRAWER ITEMS LISTENER =======================
@@ -120,7 +79,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void showLogOutAlertDialog(){
+    private void setUpToolbar() {
+
+        setSupportActionBar(binding.header.toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.header.toolbar, R.string.open_navigation_drawer, R.string.close_navigation_drawer);
+        binding.drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    private void showLogOutAlertDialog() {
 
         AlertDialog logOutDialog = new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_exit)
@@ -143,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void logOut() {
 
-        if(AppBoilerPlateCode.isInternetConnected(this)){
+        if (AppBoilerPlateCode.isInternetConnected(this)) {
 
             progressDialog = AppBoilerPlateCode.setProgressDialog(MainActivity.this);
 
@@ -159,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
 
                     LocalSets.clearLocalData(LocalController.getInstance(MainActivity.this).getPreferences());
-                    AppBoilerPlateCode.navigateToActivityWithFinish(MainActivity.this,LoginActivity.class,null);
+                    AppBoilerPlateCode.navigateToActivityWithFinish(MainActivity.this, LoginActivity.class, null);
                     System.out.println("============= Failure ===============");
                 }
             });
@@ -172,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("============= Failure ===============");
                 }
             });
-        }
-        else {
-            AppBoilerPlateCode.showSnackBarForInternet(MainActivity.this,binding.drawerLayout);
+        } else {
+            AppBoilerPlateCode.showSnackBarForInternet(MainActivity.this, binding.drawerLayout);
         }
     }
+
 }

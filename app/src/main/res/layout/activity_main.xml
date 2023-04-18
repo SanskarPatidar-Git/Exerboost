@@ -8,52 +8,27 @@
     android:background="#FBFBFB"
     tools:context=".activity.MainActivity">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-       <include
-           android:id="@+id/header"
-           layout="@layout/layout_main_header"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_main_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-       <FrameLayout
-           android:id="@+id/fragmentContainer"
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           app:layout_constraintBottom_toTopOf="@+id/spaceBottomNavigationView"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/header" />
-
-
-       <com.library.center.circle.bottomnavigationview.SpaceNavigationView
-           android:id="@+id/spaceBottomNavigationView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:gravity="bottom"
-
-           android:elevation="@dimen/_8sdp"
-
-           app:centre_button_icon="@drawable/whatsapp_img"
-           app:active_item_color="@color/colorPrimary"
-           app:active_centre_button_icon_color="@color/colorPrimary"
-           app:active_centre_button_background_color="@color/white"
-           app:centre_button_color="@color/white"
-           app:space_background_color="@color/white"
-
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-
-           app:space_item_icon_only_size="@dimen/_50sdp"
-           app:space_item_icon_size="@dimen/_24sdp"
-           app:space_item_text_size="@dimen/space_item_text_default_size" />
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
 
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationDrawerView"
@@ -63,7 +38,7 @@
 
         <include
             android:id="@+id/navigationItems"
-            layout="@layout/navigation_layout"/>
+            layout="@layout/navigation_layout" />
 
     </com.google.android.material.navigation.NavigationView>
 

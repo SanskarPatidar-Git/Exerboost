@@ -3,65 +3,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<com.google.android.material.card.MaterialCardView
-    android:layout_width="@dimen/_110sdp"
-    android:layout_height="@dimen/_90sdp"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_90sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-        <ImageView
-            android:id="@+id/editImageView"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:src="@drawable/edit_icon"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/editImageView"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:src="@drawable/edit_icon"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/editTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:text="Edit"
-            android:textColor="@color/defaultColor"
-            android:textSize="@dimen/_18ssp"
-            app:layout_constraintBottom_toBottomOf="@id/editImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/editImageView"
-            app:layout_constraintTop_toTopOf="@+id/editImageView" />
+            <TextView
+                android:id="@+id/editTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Edit"
+                android:textColor="@color/defaultColor"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintBottom_toBottomOf="@id/editImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/editImageView"
+                app:layout_constraintTop_toTopOf="@+id/editImageView" />
 
-        <ImageView
-            android:id="@+id/deleteImageView"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/delete_icon"
-            app:layout_constraintEnd_toStartOf="@+id/deleteTextView"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editImageView" />
+            <ImageView
+                android:id="@+id/deleteImageView"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/delete_icon"
+                app:layout_constraintEnd_toStartOf="@+id/deleteTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editImageView" />
 
-        <TextView
-            android:id="@+id/deleteTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:text="Delete"
-            android:textColor="@color/defaultColor"
-            android:textSize="@dimen/_18ssp"
-            app:layout_constraintBottom_toBottomOf="@id/deleteImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/deleteImageView"
-            app:layout_constraintTop_toBottomOf="@id/editTextView"
-            app:layout_constraintTop_toTopOf="@+id/deleteImageView" />
+            <TextView
+                android:id="@+id/deleteTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Delete"
+                android:textColor="@color/defaultColor"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintBottom_toBottomOf="@id/deleteImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/deleteImageView"
+                app:layout_constraintTop_toBottomOf="@id/editTextView"
+                app:layout_constraintTop_toTopOf="@+id/deleteImageView" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

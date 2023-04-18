@@ -18,7 +18,7 @@
         android:layout_marginRight="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/sliderImageView"
@@ -28,6 +28,6 @@
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/_32sdp"
-        app:layout_constraintTop_toBottomOf="@+id/sliderTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/sliderTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

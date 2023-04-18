@@ -10,6 +10,6 @@
         android:id="@+id/imageViewSlider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/home_image_slider_1"/>
+        android:src="@drawable/home_image_slider_1" />
 
 </LinearLayout>

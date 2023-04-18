@@ -11,7 +11,7 @@
         android:layout_width="@dimen/_16sdp"
         android:layout_marginLeft="@dimen/_8sdp"
         android:layout_height="@dimen/_16sdp"
-        android:src="@drawable/back_img"/>
+        android:src="@drawable/back_img" />
 
     <TextView
         android:id="@+id/headerTitleTextView"
@@ -21,6 +21,6 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
         android:layout_marginLeft="@dimen/_8sdp"
-        android:fontFamily="@font/dmsans_bold"/>
+        android:fontFamily="@font/dmsans_bold" />
 
 </LinearLayout>
