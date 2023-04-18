@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow_50"
     tools:context=".activity.main.fragments.order.fragments.complete.CompleteOrderFragment">
 
     <!-- TODO: Update blank fragment layout -->

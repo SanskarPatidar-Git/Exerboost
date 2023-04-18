@@ -39,12 +39,8 @@ public class PendingOrderFragment extends Fragment {
      * @return A new instance of fragment PendingOrderFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PendingOrderFragment newInstance(String param1, String param2) {
+    public static PendingOrderFragment newInstance() {
         PendingOrderFragment fragment = new PendingOrderFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 

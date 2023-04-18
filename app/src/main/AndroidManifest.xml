@@ -18,6 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ReferAFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.auth.new_password.NewPasswordActivity"
             android:exported="false" />
         <activity
@@ -42,19 +54,16 @@
             android:exported="false" />
         <activity
             android:name=".activity.address.add_new_address.AddNewAddressActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".activity.continue_new_order.activity.ContinueNewOrderActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".activity.auth.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activity.auth.forgot_password.ForgotPasswordActivity"
             android:exported="false" />
-
-
-
         <activity
             android:name=".activity.auth.login.LoginActivity"
             android:exported="false" />

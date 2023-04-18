@@ -20,6 +20,7 @@ import com.arbutus.exerboost.activity.main.fragments.home.adapters.AllProductAda
 import com.arbutus.exerboost.activity.main.fragments.home.adapters.AutoImageSlideAdapter;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
 import com.arbutus.exerboost.activity.main.fragments.menu.MenuPackageFragment;
+import com.arbutus.exerboost.activity.new_order.NewOrderActivity;
 import com.arbutus.exerboost.databinding.FragmentHomeBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 
@@ -52,7 +53,25 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         setSliderAdapter();
+        initListener();
         getAllProductsFromViewModel();
+    }
+
+    private void initListener(){
+
+        binding.lunchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivity(getActivity(), NewOrderActivity.class,null);
+            }
+        });
+
+        binding.dinnerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppBoilerPlateCode.navigateToActivity(getActivity(), NewOrderActivity.class,null);
+            }
+        });
     }
 
     private void getAllProductsFromViewModel() {

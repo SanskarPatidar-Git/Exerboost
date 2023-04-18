@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
         setUpToolbar();
         setUpBottomNavigation();
 
-
+        //initially load home fragment
         FragmentController.addFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
+        binding.bottomNavigation.navigationHome.setImageResource(R.drawable.navigation_home_img);
+
         initListener();
     }
 
@@ -68,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 Fragment homeFragment = HomeFragment.newInstance();
                 FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,homeFragment);
 
-                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.navigation_home_img);
-                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
-                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
+                binding.bottomNavigation.navigationHome.setImageResource(R.drawable.navigation_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setImageResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setImageResource(R.drawable.navigation_order_img);
             }
         });
 
@@ -80,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 Fragment menuPackageFragment = MenuPackageFragment.newInstance();
                 FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,menuPackageFragment);
 
-                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
-                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_selected);
-                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
+                binding.bottomNavigation.navigationHome.setImageResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setImageResource(R.drawable.navigation_menu_selected);
+                binding.bottomNavigation.navigationOrder.setImageResource(R.drawable.navigation_order_img);
             }
         });
 
@@ -92,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
                 Fragment orderFragment = YourOrderFragment.newInstance();
                 FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,orderFragment);
 
-                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
-                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
-                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_selected);
+                binding.bottomNavigation.navigationHome.setImageResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setImageResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setImageResource(R.drawable.navigation_order_selected);
             }
         });
 
@@ -105,22 +107,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //========================= NAVIGATION DRAWER ITEMS LISTENER =======================
 
-        binding.navigationItems.logOutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showLogOutAlertDialog();
-            }
-        });
+
+
+
+
     }
 
     private void initListener() {
+
+
+        //========================= NAVIGATION DRAWER ITEMS LISTENER =======================
 
         binding.navigationItems.cancelImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.drawerLayout.closeDrawer(Gravity.LEFT);
+            }
+        });
+
+        binding.navigationItems.logOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogOutAlertDialog();
             }
         });
 
@@ -182,5 +191,9 @@ public class MainActivity extends AppCompatActivity {
         else {
             AppBoilerPlateCode.showSnackBarForInternet(MainActivity.this,binding.drawerLayout);
         }
+    }
+
+    public void hideToolbar(){
+        binding.header.toolbar.setVisibility(View.GONE);
     }
 }

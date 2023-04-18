@@ -42,6 +42,18 @@
 
        </RelativeLayout>
 
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/navigationWhatsapp"
+           android:layout_width="@dimen/_60sdp"
+           android:layout_height="@dimen/_60sdp"
+           android:src="@drawable/whatsapp_img"
+           app:civ_border_width="@dimen/_4sdp"
+           app:civ_border_color="@color/white"
+           app:layout_constraintBottom_toBottomOf="@id/bottomNavigationContainer"
+           app:layout_constraintEnd_toEndOf="@+id/bottomNavigationContainer"
+           app:layout_constraintStart_toStartOf="@+id/bottomNavigationContainer"
+           android:layout_marginBottom="@dimen/_8sdp"/>
+
    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
