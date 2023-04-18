@@ -5,13 +5,13 @@
         android:width="@dimen/_1sdp"
         android:color="@color/textcolorGreen" />
 
-    <corners android:radius="@dimen/_190sdp"/>
+    <corners android:radius="@dimen/_190sdp" />
 
     <padding
         android:left="8dp"
         android:top="8dp"
         android:right="8dp"
-        android:bottom="8dp" >
+        android:bottom="8dp">
 
     </padding>
 

@@ -13,7 +13,7 @@
         android:layout_height="@dimen/_16sdp"
         android:src="@drawable/back_img"
         app:layout_constraintTop_toBottomOf="@id/guideline_top"
-        app:layout_constraintStart_toEndOf="@+id/guideline_left"/>
+        app:layout_constraintStart_toEndOf="@+id/guideline_left" />
 
 
     <ImageView
@@ -43,6 +43,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/orderPlacedImageView" />
+
     <TextView
         android:id="@+id/sitAndRelaxTextView"
         android:layout_width="0dp"
@@ -58,13 +59,13 @@
         app:layout_constraintTop_toBottomOf="@+id/yourOrderPlacedTextView" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/goBackHomeButton"
+        android:id="@+id/giveRatingButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_16sdp"
         android:background="@drawable/gobacktohomebuttongradientcolor"
         android:letterSpacing="0"
-        android:text="Go Back to Home"
+        android:text="Give Rating"
         android:textAllCaps="false"
         android:textSize="@dimen/_12ssp"
         app:backgroundTint="@null"

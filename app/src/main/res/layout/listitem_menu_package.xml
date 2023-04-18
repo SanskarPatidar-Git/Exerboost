@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/cardviewProductImage"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_gravity="start"
+        android:elevation="@dimen/_10sdp"
+        android:src="@drawable/product_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/productCardView"
+        app:layout_constraintTop_toTopOf="@+id/productCardView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="1.1dp"
+        android:layout_marginRight="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/productCardView"
+        app:layout_constraintEnd_toEndOf="@+id/productCardView"
+        app:layout_constraintStart_toEndOf="@+id/cardviewProductImage"
+        app:layout_constraintTop_toTopOf="@+id/productCardView">
+
+        <TextView
+            android:id="@+id/headingProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Combo Name 1"
+            android:textColor="@color/sitandrelaxcolor"
+            android:textSize="@dimen/_18sdp"
+            android:fontFamily="@font/dmsans_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/productCalorieTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productCalorieTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Kcal 228"
+            android:fontFamily="@font/dmsans_italic"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/productPriceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/headingProductName" />
+
+        <TextView
+            android:id="@+id/productPriceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Rs.1500"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productCalorieTextView" />
+<TextView
+    android:id="@+id/monthTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="One Monthly"
+    android:fontFamily="@font/dmsans_regular"
+    android:textColor="@color/colorSecondary"
+    android:textSize="@dimen/_12sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    app:layout_constraintTop_toTopOf="@+id/productPriceTextView"
+    app:layout_constraintStart_toEndOf="@+id/productPriceTextView"
+    app:layout_constraintTop_toBottomOf="@+id/productCalorieTextView"
+    app:layout_constraintBottom_toBottomOf="@id/productPriceTextView"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/productCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:elevation="@dimen/_1sdp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="#EBD132"
+        app:cardBackgroundColor="#F9F5DC"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
