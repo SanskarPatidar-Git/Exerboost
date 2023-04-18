@@ -1,4 +1,4 @@
-package com.arbutus.exerboost.activity.main;
+package com.arbutus.exerboost.activity.main.activity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

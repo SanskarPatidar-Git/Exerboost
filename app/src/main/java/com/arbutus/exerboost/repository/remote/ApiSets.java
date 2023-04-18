@@ -1,6 +1,5 @@
 package com.arbutus.exerboost.repository.remote;
 
-import com.arbutus.exerboost.activity.BaseResponseModelList;
 import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressModel;
 import com.arbutus.exerboost.activity.auth.forgot_password.models.ForgotPasswordModel;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
@@ -13,9 +12,7 @@ import com.arbutus.exerboost.activity.auth.social.SocialSignInModel;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.model.AddressModel;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
 import com.arbutus.exerboost.activity.new_order.NewOrderModel;
-import com.arbutus.exerboost.repository.BaseResponseModel;
-
-import org.json.JSONObject;
+import com.arbutus.exerboost.repository.BaseResponseModelList;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

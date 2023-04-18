@@ -14,8 +14,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import com.arbutus.exerboost.activity.MainActivity;
-import com.arbutus.exerboost.activity.address.add_new_address.AddNewAddressActivity;
+import com.arbutus.exerboost.activity.main.activity.MainActivity;
 import com.arbutus.exerboost.activity.auth.forgot_password.ForgotPasswordActivity;
 import com.arbutus.exerboost.activity.auth.login.model.response.Data;
 import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;

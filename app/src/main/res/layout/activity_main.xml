@@ -6,29 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FBFBFB"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.main.activity.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/header"
-            layout="@layout/layout_main_header"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+       <include
+           android:id="@+id/header"
+           layout="@layout/layout_main_header"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
 
-        <FrameLayout
-            android:id="@+id/fragmentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+       <FrameLayout
+           android:id="@+id/fragmentContainer"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           app:layout_constraintBottom_toTopOf="@+id/bottomNavigationContainer"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/header" />
 
+       <RelativeLayout
+           android:id="@+id/bottomNavigationContainer"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+           <include
+               android:id="@+id/bottomNavigation"
+               layout="@layout/layout_bottom_navigation" />
+
+       </RelativeLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationDrawerView"
@@ -38,7 +52,7 @@
 
         <include
             android:id="@+id/navigationItems"
-            layout="@layout/navigation_layout" />
+            layout="@layout/navigation_layout"/>
 
     </com.google.android.material.navigation.NavigationView>
 

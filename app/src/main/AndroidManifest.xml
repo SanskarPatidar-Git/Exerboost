@@ -62,7 +62,7 @@
             android:name=".activity.intro.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.main.activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SplashActivity"

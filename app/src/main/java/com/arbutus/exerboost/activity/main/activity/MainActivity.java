@@ -1,9 +1,9 @@
-package com.arbutus.exerboost.activity;
+package com.arbutus.exerboost.activity.main.activity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -13,23 +13,18 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.auth.login.LoginActivity;
-import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
-import com.arbutus.exerboost.activity.main.MainActivityRepository;
 import com.arbutus.exerboost.activity.main.fragments.home.HomeFragment;
+import com.arbutus.exerboost.activity.main.fragments.menu.MenuPackageFragment;
+import com.arbutus.exerboost.activity.main.fragments.order.YourOrderFragment;
 import com.arbutus.exerboost.databinding.ActivityMainBinding;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.arbutus.exerboost.utilities.FragmentController;
-
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,14 +44,66 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
         setUpToolbar();
-
-        //binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
-        //  setUpBottomNavigation();
+        setUpBottomNavigation();
 
 
-        FragmentController.replaceFragment(fragmentManager, R.id.fragmentContainer, new HomeFragment());
+        FragmentController.addFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
         initListener();
+    }
 
+    private void setUpToolbar() {
+
+        setSupportActionBar(binding.header.toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,binding.drawerLayout,binding.header.toolbar,R.string.open_navigation_drawer,R.string.close_navigation_drawer);
+        binding.drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    private void setUpBottomNavigation() {
+
+        binding.bottomNavigation.navigationHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment homeFragment = HomeFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,homeFragment);
+
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.navigation_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
+            }
+        });
+
+        binding.bottomNavigation.navigationMenuPackage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment menuPackageFragment = MenuPackageFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,menuPackageFragment);
+
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_selected);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
+            }
+        });
+
+        binding.bottomNavigation.navigationOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment orderFragment = YourOrderFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,orderFragment);
+
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_selected);
+            }
+        });
+
+        binding.bottomNavigation.navigationProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         //========================= NAVIGATION DRAWER ITEMS LISTENER =======================
 
@@ -79,16 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setUpToolbar() {
-
-        setSupportActionBar(binding.header.toolbar);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.header.toolbar, R.string.open_navigation_drawer, R.string.close_navigation_drawer);
-        binding.drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-    }
-
-    private void showLogOutAlertDialog() {
+    private void showLogOutAlertDialog(){
 
         AlertDialog logOutDialog = new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_exit)
@@ -111,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void logOut() {
 
-        if (AppBoilerPlateCode.isInternetConnected(this)) {
+        if(AppBoilerPlateCode.isInternetConnected(this)){
 
             progressDialog = AppBoilerPlateCode.setProgressDialog(MainActivity.this);
 
@@ -127,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
 
                     LocalSets.clearLocalData(LocalController.getInstance(MainActivity.this).getPreferences());
-                    AppBoilerPlateCode.navigateToActivityWithFinish(MainActivity.this, LoginActivity.class, null);
+                    AppBoilerPlateCode.navigateToActivityWithFinish(MainActivity.this,LoginActivity.class,null);
                     System.out.println("============= Failure ===============");
                 }
             });
@@ -140,9 +178,9 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("============= Failure ===============");
                 }
             });
-        } else {
-            AppBoilerPlateCode.showSnackBarForInternet(MainActivity.this, binding.drawerLayout);
+        }
+        else {
+            AppBoilerPlateCode.showSnackBarForInternet(MainActivity.this,binding.drawerLayout);
         }
     }
-
 }

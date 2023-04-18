@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.intro.IntroActivity;
-import com.arbutus.exerboost.databinding.ActivityLoginBinding;
+import com.arbutus.exerboost.activity.main.activity.MainActivity;
 import com.arbutus.exerboost.databinding.ActivitySplashBinding;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;

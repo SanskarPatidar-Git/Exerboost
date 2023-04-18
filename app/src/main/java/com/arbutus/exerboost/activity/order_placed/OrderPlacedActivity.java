@@ -7,8 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.arbutus.exerboost.R;
-import com.arbutus.exerboost.activity.MainActivity;
+import com.arbutus.exerboost.activity.main.activity.MainActivity;
 import com.arbutus.exerboost.databinding.ActivityOrderPlacedBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 

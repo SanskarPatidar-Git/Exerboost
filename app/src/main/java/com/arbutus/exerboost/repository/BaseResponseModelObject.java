@@ -1,10 +1,8 @@
-package com.arbutus.exerboost.activity;
+package com.arbutus.exerboost.repository;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class BaseResponseModelList<T> {
+public class BaseResponseModelObject<T> {
 
     @SerializedName("status")
     private boolean status;
@@ -16,7 +14,7 @@ public class BaseResponseModelList<T> {
     private String message;
 
     @SerializedName("data")
-    private List<T> data;
+    private T data;
 
     public boolean isStatus() {
         return status;
@@ -42,7 +40,11 @@ public class BaseResponseModelList<T> {
         this.message = message;
     }
 
-    public List<T> getData() {
+    public T getData() {
         return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }

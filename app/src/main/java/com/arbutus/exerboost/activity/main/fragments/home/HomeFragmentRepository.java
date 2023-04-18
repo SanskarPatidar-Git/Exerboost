@@ -3,10 +3,9 @@ package com.arbutus.exerboost.activity.main.fragments.home;
 import androidx.lifecycle.MutableLiveData;
 
 
-import com.arbutus.exerboost.activity.BaseResponseModelList;
+import com.arbutus.exerboost.repository.BaseResponseModelList;
 import com.arbutus.exerboost.activity.MyBaseApplication;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
-import com.arbutus.exerboost.repository.BaseResponseModel;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.repository.remote.ApiController;
