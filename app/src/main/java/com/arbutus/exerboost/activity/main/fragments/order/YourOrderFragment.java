@@ -99,6 +99,7 @@ public class YourOrderFragment extends Fragment {
             @Override
             public void onChanged(List<BaseYourOrderModel> baseYourOrderModels) {
                 progressDialog.dismiss();
+                pendingOrderFragment.setCompletedData(baseYourOrderModels);
             }
         });
 
