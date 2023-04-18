@@ -26,8 +26,8 @@
         android:textAllCaps="false"
         android:textSize="@dimen/_12ssp"
         app:backgroundTint="@null"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left_end"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right_end"
         app:layout_constraintTop_toBottomOf="@id/productCardView"
         app:layout_constraintBottom_toBottomOf="@id/productCardView"
         />
@@ -46,12 +46,12 @@
             android:id="@+id/headingProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/dmsans_regular"
             android:gravity="center"
             android:text="Combo Name 1"
             android:textColor="@color/sitandrelaxcolor"
             android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toTopOf="@+id/productCalorieTextView"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,8 +67,9 @@
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/headingProductName" />
+            app:layout_constraintTop_toBottomOf="@+id/headingProductName" />
 
         <TextView
             android:id="@+id/productPriceTextView"
@@ -88,10 +89,10 @@
             android:id="@+id/monthTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:fontFamily="@font/dmsans_regular"
             android:gravity="center"
             android:text="One Monthly"
-            android:layout_marginLeft="@dimen/_10sdp"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@id/productPriceTextView"
@@ -110,7 +111,6 @@
             android:text="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specim not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
             android:textColor="@color/sitandrelaxcolor"
             android:textSize="@dimen/_16sdp"
-            app:layout_constraintBottom_toBottomOf="@id/productPriceTextView"
             app:layout_constraintBottom_toTopOf="@id/productPriceTextView"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
