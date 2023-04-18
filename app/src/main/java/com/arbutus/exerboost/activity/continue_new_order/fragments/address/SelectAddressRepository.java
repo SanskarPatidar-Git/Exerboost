@@ -3,11 +3,9 @@ package com.arbutus.exerboost.activity.continue_new_order.fragments.address;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.arbutus.exerboost.activity.BaseResponseModelList;
+import com.arbutus.exerboost.repository.BaseResponseModelList;
 import com.arbutus.exerboost.activity.MyBaseApplication;
-import com.arbutus.exerboost.activity.auth.login.model.response.LoginResponse;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.model.AddressModel;
-import com.arbutus.exerboost.repository.BaseResponseModel;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.repository.remote.ApiController;

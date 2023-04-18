@@ -1,8 +1,9 @@
-package com.arbutus.exerboost.activity;
+package com.arbutus.exerboost.activity.main.activity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -16,16 +17,14 @@ import android.widget.Toast;
 
 import com.arbutus.exerboost.R;
 import com.arbutus.exerboost.activity.auth.login.LoginActivity;
-import com.arbutus.exerboost.activity.auth.login.model.request.LoginModel;
-import com.arbutus.exerboost.activity.main.MainActivityRepository;
 import com.arbutus.exerboost.activity.main.fragments.home.HomeFragment;
+import com.arbutus.exerboost.activity.main.fragments.menu.MenuPackageFragment;
+import com.arbutus.exerboost.activity.main.fragments.order.YourOrderFragment;
 import com.arbutus.exerboost.databinding.ActivityMainBinding;
 import com.arbutus.exerboost.repository.local.LocalController;
 import com.arbutus.exerboost.repository.local.LocalSets;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 import com.arbutus.exerboost.utilities.FragmentController;
-import com.library.center.circle.bottomnavigationview.SpaceItem;
-import com.library.center.circle.bottomnavigationview.SpaceOnClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,12 +44,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
         setUpToolbar();
-
-        binding.spaceBottomNavigationView.initWithSaveInstanceState(savedInstanceState);
         setUpBottomNavigation();
 
 
-        FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
+        FragmentController.addFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
         initListener();
     }
 
@@ -65,39 +62,48 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpBottomNavigation() {
 
-
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_home_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_more_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.navigation_buy_img));
-        binding.spaceBottomNavigationView.addSpaceItem(new SpaceItem("", R.drawable.person_cartoon_img));
-
-        binding.spaceBottomNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+        binding.bottomNavigation.navigationHome.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCentreButtonClick() {
+            public void onClick(View view) {
+                Fragment homeFragment = HomeFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,homeFragment);
 
-            }
-
-            @Override
-            public void onItemClick(int itemIndex, String itemName) {
-
-                switch (itemIndex){
-
-
-                    case 0 : FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,new HomeFragment());
-                        break;
-                    case 1 : break;
-                    case 2 : break;
-                    case 3 : break;
-                    default:
-                }
-            }
-
-            @Override
-            public void onItemReselected(int itemIndex, String itemName) {
-
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.navigation_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
             }
         });
 
+        binding.bottomNavigation.navigationMenuPackage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment menuPackageFragment = MenuPackageFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,menuPackageFragment);
+
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_selected);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_img);
+            }
+        });
+
+        binding.bottomNavigation.navigationOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment orderFragment = YourOrderFragment.newInstance();
+                FragmentController.replaceFragment(fragmentManager,R.id.fragmentContainer,orderFragment);
+
+                binding.bottomNavigation.navigationHome.setBackgroundResource(R.drawable.nav_home_img);
+                binding.bottomNavigation.navigationMenuPackage.setBackgroundResource(R.drawable.navigation_menu_img);
+                binding.bottomNavigation.navigationOrder.setBackgroundResource(R.drawable.navigation_order_selected);
+            }
+        });
+
+        binding.bottomNavigation.navigationProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         //========================= NAVIGATION DRAWER ITEMS LISTENER =======================
 

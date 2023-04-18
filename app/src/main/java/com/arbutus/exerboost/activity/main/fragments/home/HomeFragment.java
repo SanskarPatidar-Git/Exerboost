@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.arbutus.exerboost.activity.main.fragments.home.adapters.AllProductAdapter;
 import com.arbutus.exerboost.activity.main.fragments.home.adapters.AutoImageSlideAdapter;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
+import com.arbutus.exerboost.activity.main.fragments.menu.MenuPackageFragment;
 import com.arbutus.exerboost.databinding.FragmentHomeBinding;
 import com.arbutus.exerboost.utilities.AppBoilerPlateCode;
 
@@ -28,6 +29,11 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private HomeFragmentViewModel homeFragmentViewModel;
+
+    public static HomeFragment newInstance() {
+        HomeFragment fragment = new HomeFragment();
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
