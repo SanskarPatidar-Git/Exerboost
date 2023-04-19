@@ -11,7 +11,8 @@ import com.arbutus.exerboost.activity.auth.reset_password.model.ResetPasswordMod
 import com.arbutus.exerboost.activity.auth.social.SocialSignInModel;
 import com.arbutus.exerboost.activity.continue_new_order.fragments.address.model.AddressModel;
 import com.arbutus.exerboost.activity.main.fragments.home.model.Data;
-import com.arbutus.exerboost.activity.main.fragments.order.models.BaseYourOrderModel;
+import com.arbutus.exerboost.activity.main.fragments.order.models.response.YourOrderRootModel;
+import com.arbutus.exerboost.activity.main.fragments.order.models.request.YourOrderRequestModel;
 import com.arbutus.exerboost.activity.new_order.NewOrderModel;
 import com.arbutus.exerboost.repository.BaseResponseModelList;
 
@@ -69,5 +70,5 @@ public interface ApiSets {
     //====================== YOUR ORDER FRAGMENT ======================
 
     @POST("app/order/get-all-order")
-    Call<BaseResponseModelList<BaseYourOrderModel>> getAllOrder(@Header("Authorization") String authToken);
+    Call<BaseResponseModelList<YourOrderRootModel>> getAllOrder(@Body YourOrderRequestModel model , @Header("Authorization") String authToken);
 }

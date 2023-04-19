@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="badge_background_color">#f44336</color>
+    <color name="centre_button_color">#4285F4</color>
+    <color name="colorBackgroundHighlightWhite">#8dffffff</color>
+    <color name="default_active_item_color">#262626</color>
+    <color name="default_inactive_item_color">#9e9e9e</color>
+    <color name="selected_item_color">#3fffffff</color>
+    <color name="space_background_color">#757575</color>
+    <color name="space_default_color">#2A3137</color>
+    <color name="space_transparent">#00000000</color>
+    <color name="space_white">#ffffff</color>
+    <color name="white_with_alpha">#bfffffff</color>
+    <dimen name="badge_left_margin">5dp</dimen>
+    <dimen name="centre_content_width">110dp</dimen>
+    <dimen name="item_content_width">80dp</dimen>
+    <dimen name="main_content_height">50dp</dimen>
+    <dimen name="space_centre_button_default_size">56dp</dimen>
+    <dimen name="space_centre_button_margin">6dp</dimen>
+    <dimen name="space_item_icon_default_size">18dp</dimen>
+    <dimen name="space_item_icon_only_size">25dp</dimen>
+    <dimen name="space_item_text_default_size">14sp</dimen>
+    <dimen name="space_navigation_height">72dp</dimen>
+    <dimen name="view_bottom_margin">50dp</dimen>
+    <string name="app_name">Space Navigation</string>
+    <string name="space_scrolling_view_behavior">com.luseen.spacenavigation.SpaceNavigationViewBehavior</string>
+    <declare-styleable name="SpaceNavigationView">
+        <attr format="dimension" name="space_item_icon_size"/>
+        <attr format="dimension" name="space_item_icon_only_size"/>
+        <attr format="dimension" name="space_item_text_size"/>
+        <attr format="color" name="space_background_color"/>
+        <attr format="color" name="centre_button_color"/>
+        <attr format="color" name="active_item_color"/>
+        <attr format="color" name="inactive_item_color"/>
+        <attr format="reference" name="centre_button_icon"/>
+        <attr format="color" name="active_centre_button_icon_color"/>
+        <attr format="color" name="inactive_centre_button_icon_color"/>
+        <attr format="color" name="active_centre_button_background_color"/>
+        <attr format="boolean" name="centre_part_linear"/>
+    </declare-styleable>
+</resources>

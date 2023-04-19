@@ -31,4 +31,9 @@ public class FragmentController {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public static void removeFragment(FragmentManager manager , Fragment fragment){
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.remove(fragment).commit();
+    }
 }

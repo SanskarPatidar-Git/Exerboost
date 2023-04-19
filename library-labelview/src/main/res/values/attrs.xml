@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelView">
+        <!-- Set text content -->
+        <attr name="lv_text" format="string"/>
+        <!-- Set the text color, default #ffffff -->
+        <attr name="lv_text_color" format="color"/>
+        <!-- Set the text size, default 11sp -->
+        <attr name="lv_text_size" format="dimension"/>
+        <!-- Set whether the text supports bold, default true -->
+        <attr name="lv_text_bold" format="boolean"/>
+        <!-- Set whether the text supports all uppercase, the default is true-->
+        <attr name="lv_text_all_caps" format="boolean"/>
+        <!-- Set background color, default "#FF4081"-->
+        <attr name="lv_background_color" format="color"/>
+        <!-- Set the minimum width and height of the rectangle where the LabelView is located, the default mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension"/>
+        <!-- Set text up and down padding, default 3.5dp, invalid when mFillTriangle is true -->
+        <attr name="lv_padding" format="dimension"/>
+        <!-- Set LabelView orientation -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51"/>
+            <enum name="TOP_RIGHT" value="53"/>
+            <enum name="BOTTOM_LEFT" value="83"/>
+            <enum name="BOTTOM_RIGHT" value="85"/>
+        </attr>
+        <!-- Set whether to fill the triangle area, default false -->
+        <attr name="lv_fill_triangle" format="boolean"/>
+    </declare-styleable>
+</resources>

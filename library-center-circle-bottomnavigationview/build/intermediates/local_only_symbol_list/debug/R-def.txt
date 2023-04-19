@@ -1,0 +1,47 @@
+R_DEF: Internal format may change without notice
+local
+attr? active_centre_button_background_color
+attr? active_centre_button_icon_color
+attr? active_item_color
+attr? centre_button_color
+attr? centre_button_icon
+attr? centre_part_linear
+attr? inactive_centre_button_icon_color
+attr? inactive_item_color
+attr? space_background_color
+attr? space_item_icon_only_size
+attr? space_item_icon_size
+attr? space_item_text_size
+color badge_background_color
+color centre_button_color
+color colorBackgroundHighlightWhite
+color default_active_item_color
+color default_inactive_item_color
+color selected_item_color
+color space_background_color
+color space_default_color
+color space_transparent
+color space_white
+color white_with_alpha
+dimen badge_left_margin
+dimen centre_content_width
+dimen item_content_width
+dimen main_content_height
+dimen space_centre_button_default_size
+dimen space_centre_button_margin
+dimen space_item_icon_default_size
+dimen space_item_icon_only_size
+dimen space_item_text_default_size
+dimen space_navigation_height
+dimen view_bottom_margin
+drawable near_me
+drawable white_ripple
+id badge_container
+id badge_text_view
+id main_content
+id space_icon
+id space_text
+layout space_item_view
+string app_name
+string space_scrolling_view_behavior
+styleable SpaceNavigationView space_item_icon_size space_item_icon_only_size space_item_text_size space_background_color centre_button_color active_item_color inactive_item_color centre_button_icon active_centre_button_icon_color inactive_centre_button_icon_color active_centre_button_background_color centre_part_linear

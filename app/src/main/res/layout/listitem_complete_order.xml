@@ -1,115 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_6sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="@dimen/_100sdp">
 
             <ImageView
                 android:id="@+id/completeorder_imageView"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_90sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:src="@drawable/card_view_image"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/headingCompleteOrder"
+                android:id="@+id/orderTitleTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="The Macdonalds"
+                android:fontFamily="@font/dmsans_medium"
                 android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_18sdp"
-                app:layout_constraintBottom_toTopOf="@+id/subHeadingCompleteOrder"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toTopOf="@+id/orderDescriptionTextView"
                 app:layout_constraintStart_toEndOf="@id/completeorder_imageView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/subHeadingCompleteOrder"
+                android:id="@+id/orderDescriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Classic Cheeseburgerburger"
                 android:textColor="@color/colorSecondary"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintBottom_toTopOf="@+id/priceTextView"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/dmsans_regular"
+                app:layout_constraintBottom_toTopOf="@+id/orderPriceTextView"
                 app:layout_constraintStart_toEndOf="@id/completeorder_imageView"
-                app:layout_constraintTop_toBottomOf="@+id/headingCompleteOrder" />
+                app:layout_constraintTop_toBottomOf="@+id/orderTitleTextView" />
 
             <TextView
-                android:id="@+id/priceTextView"
+                android:id="@+id/orderPriceTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Rs.2500"
-                android:textColor="@color/redtomato"
-                android:textSize="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/dmsans_medium"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/completeorder_imageView"
-                app:layout_constraintTop_toBottomOf="@+id/subHeadingCompleteOrder" />
+                app:layout_constraintTop_toBottomOf="@+id/orderDescriptionTextView" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/editRemoveLayout"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_4sdp"
                 android:layout_marginLeft="@dimen/_10sdp"
-                app:layout_constraintBottom_toTopOf="@+id/orderAgainTextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/subHeadingCompleteOrder"
-                app:layout_constraintTop_toBottomOf="@+id/headingCompleteOrder">
+                app:layout_constraintStart_toEndOf="@+id/orderDescriptionTextView"
+                app:layout_constraintTop_toBottomOf="@+id/orderTitleTextView">
 
-                <Button
+                <ImageButton
                     android:id="@+id/removeBtn"
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_alignParentStart="true"
-                    android:background="@drawable/custom_btn_remove"
-                    android:backgroundTint="#C5BCBC" />
-
-                <EditText
-                    android:id="@+id/itemQuanEt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:inputType="number"
-                    android:minEms="1"
+                    android:background="@drawable/drawable_circle_shape_gradient"
+                    android:src="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/totalOrderCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="1"
-                    android:textAlignment="center"
+                    android:fontFamily="@font/dmsans_bold"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
                     android:textAllCaps="false"
                     android:textColor="@android:color/black"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_14ssp" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/addBtn"
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/custom_btn_add"
-                    android:backgroundTint="#C5BCBC" />
-            </RelativeLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_circle_shape_gradient"
+                    android:src="@drawable/ic_add_white" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/orderAgainTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/order_again"
-                android:textColor="@color/redtomato"
-                android:textSize="@dimen/_15sdp"
-                app:layout_constraintBottom_toBottomOf="@+id/priceTextView"
+                android:fontFamily="@font/dmsans_regular"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                app:layout_constraintEnd_toEndOf="@+id/editRemoveLayout"
+                app:layout_constraintTop_toBottomOf="@+id/orderPriceTextView" />
+
+            <com.library.labelview.LabelView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:lv_text="Completed"
+                app:lv_gravity="TOP_RIGHT"
+                app:lv_text_color="@color/white"
+                app:lv_text_all_caps="false"
+                app:lv_text_size="@dimen/_7ssp"
+                app:lv_background_color="#85BB72"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editRemoveLayout" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

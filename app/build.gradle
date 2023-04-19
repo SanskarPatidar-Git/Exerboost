@@ -38,6 +38,7 @@ dependencies {
 
     implementation project(':library-pinview')
     implementation project(':library-sliderview')
+    implementation project(':library-labelview')
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
